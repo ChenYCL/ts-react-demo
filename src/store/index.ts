@@ -1,5 +1,6 @@
-import {combineReducers,Store,createStore} from 'redux'
-
+import {combineReducers, Store, createStore, applyMiddleware} from 'redux'
+import thunk from 'redux-thunk'
+import {composeWithDevTools} from 'redux-devtools-extension'
 import {CounterReducer} from './couter/reducers'
 
 
@@ -7,7 +8,9 @@ const rootReducer = combineReducers({
     CounterReducer,
 })
 
-export const configStore:Store = createStore(rootReducer)  // 报错
+export const configStore: Store = createStore(rootReducer, composeWithDevTools(
+    applyMiddleware(thunk)
+))  // 报错
 // export const configStore:Store = createStore(CounterReducer)  // 不报错
 
 
