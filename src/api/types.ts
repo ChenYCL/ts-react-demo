@@ -1,5 +1,5 @@
 export interface demoInterface {
-    name:string
-    age:number
-    id:number
+    name: string;
+    age: number;
+    id: number;
 }

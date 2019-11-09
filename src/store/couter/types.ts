@@ -1,18 +1,14 @@
-
-export const ADD = 'ADD'
-export const REDUCE = 'REDUCE'
+export const ADD = 'ADD';
+export const REDUCE = 'REDUCE';
 
 export interface AddAction {
-    type: typeof ADD
+    type: typeof ADD;
 }
 
 export interface ReduceAction {
-    type:typeof REDUCE
+    type: typeof REDUCE;
 }
 
 export type countType = number;
 
-
-export type CounterActionTypes = AddAction | ReduceAction
-
-
+export type CounterActionTypes = AddAction | ReduceAction;

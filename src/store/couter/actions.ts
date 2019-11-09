@@ -1,13 +1,13 @@
-import {ADD, REDUCE} from './types'
+import { ADD, REDUCE } from './types';
 
 export function Add() {
     return {
-        type: ADD
-    }
+        type: ADD,
+    };
 }
 
 export function Reduce() {
     return {
-        type: REDUCE
-    }
+        type: REDUCE,
+    };
 }
