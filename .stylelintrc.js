@@ -12,5 +12,6 @@ module.exports={
         indentation: 2,
         "at-rule-no-unknown": null,
         "scss/at-rule-no-unknown":true,
+        "no-invalid-double-slash-comments":true
     }
 }

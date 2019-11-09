@@ -10,7 +10,6 @@ interface IRON {
     reduce: () => void;
 }
 const mapStateToProps = (state: AppState) => {
-    console.log(state, 'state');
     return {
         count: state.CounterReducer,
     };
