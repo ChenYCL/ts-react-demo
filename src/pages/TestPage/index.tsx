@@ -9,7 +9,19 @@ interface IRON {
     add: () => void;
     reduce: () => void;
 }
+const mapStateToProps = (state: AppState) => {
+    console.log(state, 'state');
+    return {
+        count: state.CounterReducer,
+    };
+};
 
+const mapActionsToProps = (dispatch: Dispatch) => ({
+    add: () => dispatch(Add()),
+    reduce: () => dispatch(Reduce()),
+});
+
+@(connect(mapStateToProps, mapActionsToProps) as any)
 class Test extends React.PureComponent<IRON> {
     public render() {
         const { count, add, reduce } = this.props;
@@ -23,16 +35,4 @@ class Test extends React.PureComponent<IRON> {
     }
 }
 
-const mapStateToProps = (state: AppState) => {
-    console.log(state, 'state');
-    return {
-        count: state.CounterReducer,
-    };
-};
-
-const mapActionsToProps = (dispatch: Dispatch) => ({
-    add: () => dispatch(Add()),
-    reduce: () => dispatch(Reduce()),
-});
-
-export default connect(mapStateToProps, mapActionsToProps)(Test);
+export default Test;
