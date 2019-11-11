@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './index.scss';
+
 // import cx from 'classnames';
 
 export type navType = {
@@ -21,11 +23,27 @@ class Header extends React.Component<IRON, { initState: string }> {
     public render() {
         const { nav, color, padding } = this.props;
         return (
-            <ul>
+            <header>
+                <div className="nav-menu-bread "></div>
+                <div className="font-logo">MUSICBED</div>
                 {nav.map((item) => (
-                    <li key={item.key}>{item.name}</li>
+                    <a className="nav-link-item" key={item.key}>
+                        {item.name}
+                    </a>
                 ))}
-            </ul>
+                <div className="login-sign">
+                    <a className="help">Help</a>
+                    <div className="login-create">
+                        <a className="login-btn css-line" aria-current="false">
+                            <p>Login</p>
+                        </a>
+                        <a className="create-btn">
+                            <button type="submit">Create an Account</button>
+                        </a>
+                    </div>
+                </div>
+                <div>{/*  左侧导航条内容 */}</div>
+            </header>
         );
     }
 }

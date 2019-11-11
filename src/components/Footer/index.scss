@@ -1,0 +1,155 @@
+//footer导航样式
+@import "../../resource/css/base";
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+
+  h3 {
+    margin: 0px;
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+    font-family: Quarto;
+    max-width: none;
+  }
+
+  section.footer-info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    padding: 72px 0;
+    background-color: rgb(247, 250, 252);
+
+    .left-section {
+      text-align: center;
+      flex: 1;
+      border-right: 1px solid rgb(224, 230, 233);
+
+      .desc {
+        transition: all 0.2s linear 0s;
+        color: rgb(39, 40, 42);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+        font-family: proxima-nova, Proxima Nova, Helvetica Neue, Helvetica, Arial, sans-serif;
+        white-space: inherit;
+        overflow: inherit;
+        text-overflow: inherit;
+        text-transform: inherit;
+        font-style: inherit;
+        text-decoration: inherit;
+        letter-spacing: inherit;
+        margin: 10px 0px 40px;
+        text-align: center;
+        max-width: none;
+      }
+
+      .work-time {
+        transition: all 0.2s linear 0s;
+        margin: 0px;
+        color: rgb(39, 40, 42);
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 24px;
+        text-align: inherit;
+        font-family: proxima-nova, Proxima Nova, Helvetica Neue, Helvetica, Arial, sans-serif;
+        white-space: inherit;
+        overflow: inherit;
+        text-overflow: inherit;
+        text-transform: inherit;
+        font-style: inherit;
+        text-decoration: inherit;
+        letter-spacing: inherit;
+      }
+
+      section.icon-wrapper {
+        padding-top: 30px;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+
+        div {
+          margin: 2px;
+          width: 100px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          span {
+            transition: all 0.2s linear 0s;
+            margin: 10px 0px 0px;
+            color: rgb(39, 40, 42);
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 24px;
+            text-align: inherit;
+            font-family: proxima-nova, Proxima Nova, Helvetica Neue, Helvetica, Arial, sans-serif;
+          }
+
+          i {
+            display: block;
+            width: 16px;
+            height: 16px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+          }
+
+          i.icon-phone {
+            background: url("../../resource/image/004-smartphone.svg");
+          }
+
+          i.icon-chat {
+            background: url("../../resource/image/001-chat.svg");
+          }
+
+          i.icon-email {
+            background: url("../../resource/image/002-email.svg");
+          }
+
+          i.icon-FAQ {
+            background: url("../../resource/image/003-question.svg");
+          }
+        }
+      }
+    }
+
+    .right-section {
+      display: flex;
+      justify-content: space-around;
+      padding: 0 100px;
+      flex: 1;
+
+      h3 {
+        font-size: 14px;
+        font-family: proxima-nova, Proxima Nova, Helvetica Neue, Helvetica, Arial, sans-serif;
+        text-align: left;
+        padding-bottom: 24px;
+      }
+
+      div {
+        a {
+          display: block;
+          margin-bottom: 10px;
+          text-decoration: none;
+          cursor: pointer;
+          font-weight: 400;
+          line-height: 24px;
+          white-space: nowrap;
+          transition: color 0.2s linear 0s;
+          color: rgb(145, 150, 152);
+          font-size: 14px;
+        }
+        a:active, a:hover {
+          outline-width: 0px;
+          @include hover-effect;
+        }
+      }
+    }
+  }
+}

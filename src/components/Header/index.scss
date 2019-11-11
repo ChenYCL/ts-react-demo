@@ -1,0 +1,174 @@
+header{
+  position: relative;
+  z-index: 210;
+  height: 56px;
+  -moz-box-flex: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
+  -moz-box-pack: start;
+  justify-content: flex-start;
+  -moz-box-align: center;
+  align-items: center;
+  overflow: hidden;
+  transition: all 0.2s linear 0s;
+  cursor: pointer;
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  width: auto;
+  //max-width: 608px;
+  padding: 0px 30px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 21px 0px;
+  .nav-menu-bread{
+    width: 80px;
+    height: 100%;
+    background: transparent;
+  }
+  .font-logo{
+    width: 180px;
+    font-weight: 600;
+    font-family: proxima-nova, Proxima Nova, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 30px;
+    text-align: center;
+  }
+  .nav-link-item{
+    background-color: transparent;
+    text-decoration: none;
+    display: flex;
+    white-space: nowrap;
+    font-size: 14px;
+    padding-left: 15px;
+    font-weight: 700;
+    color: rgb(39, 40, 42);
+  }
+  .login-sign{
+    height: 66px;
+    -moz-box-pack: end;
+    justify-content: flex-end;
+    display: flex;
+    position: relative;
+    z-index: 0;
+    -moz-box-flex: 1;
+    flex-grow: 1;
+    flex-shrink: 0;
+    align-items: center;
+    transition: all 0.1s linear 0s;
+    padding-right: 25px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(39, 40, 42);
+    .help{
+      cursor: pointer;
+      font-weight: 600;
+      color:
+        rgb(145, 150, 152);
+      font-size: 14px;
+      line-height: 14px;
+      text-align: left;
+      white-space: normal;
+      text-transform: inherit;
+      font-family: proxima-nova, Proxima Nova, Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-style: inherit;
+      letter-spacing: inherit;
+      text-decoration: inherit;
+      display: flex;
+      margin-right: 25px;
+    }
+    .login-create{
+      -moz-box-align: center;
+      box-sizing: border-box;
+      display: flex;
+      flex: 0 1 auto;
+      flex-flow: row nowrap;
+      align-items: center;
+      .login-btn{
+        height: 66px;
+        width: auto;
+        padding: 10px 10px 10px 25px;
+        border-radius: 2px;
+        text-decoration: none;
+        cursor: pointer;
+        position: relative;
+        z-index: 210;
+        display: flex;
+        -moz-box-flex: 0;
+        flex-grow: 0;
+        flex-shrink: 0;
+        -moz-box-align: center;
+        align-items: center;
+        -moz-box-pack: center;
+        justify-content: center;
+        transition: all 0.1s linear 0.2s;
+        background-color: rgb(255, 255, 255);
+        p{
+          transition: all 0.2s linear 0s;
+          margin: 0px;
+          color: rgb(39, 40, 42);
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 24px;
+          text-align: inherit;
+          font-family: proxima-nova, Proxima Nova, Helvetica Neue, Helvetica, Arial, sans-serif;
+          white-space: inherit;
+          overflow: inherit;
+          text-overflow: inherit;
+          text-transform: inherit;
+          font-style: inherit;
+          text-decoration: inherit;
+          letter-spacing: inherit;
+        }
+      }
+      .create-btn{
+        margin: 0px 15px;
+        font-family: proxima-nova, Proxima Nova, Helvetica Neue, Helvetica, Arial, sans-serif;
+        button{
+          -moz-box-align: center;
+          align-items: center;
+          border: 0px none;
+          cursor: pointer;
+          display: flex;
+          font-weight: 600;
+          -moz-box-pack: center;
+          justify-content: center;
+          letter-spacing: 0.8px;
+          outline: currentcolor none 0px;
+          perspective: 1000px;
+          text-align: center;
+          text-decoration: none;
+          transform: translateZ(0px);
+          transition: all 0.1s linear 0s;
+          white-space: nowrap;
+          border-radius: 0px;
+          pointer-events: inherit;
+          background-color:
+            rgb(39, 40, 42);
+          color:
+            rgb(255, 255, 255);
+          font-family: proxima-nova, Proxima Nova, Helvetica Neue, Helvetica, Arial, sans-serif;
+          font-size: 11.9px;
+          height: 34px;
+          line-height: 11.9px;
+          width: auto;
+          padding: 0px 10px;
+          min-width: 152px;
+        }
+      }
+    }
+  }
+}
+
+button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0px;
+}
+
+
+
+.css-line::after {
+  content: "";
+  height: 56px;
+  width: 1px;
+  position: absolute;
+  top: 16px;
+  left: -1px;
+  transition: all 0.1s linear 0s;
+  background-color: rgb(237, 242, 245);
+}
