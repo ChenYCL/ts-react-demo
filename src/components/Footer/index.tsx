@@ -3,18 +3,22 @@ import { Props } from '../../types';
 import './index.scss';
 import Icon, { IconType } from '../Icon';
 class Footer extends React.Component<Props, {}> {
-    footIconList: Array<IconType> = [
+    public footIconList: Array<IconType> = [
         {
-            url: '../../resource/image/facebook.svg',
+            url: require('../../resource/image/facebook.svg'),
+            key: 0,
         },
         {
-            url: '../../resource/image/twitter.svg',
+            url: require('../../resource/image/twitter.svg'),
+            key: 1,
         },
         {
-            url: '../../resource/image/instagram.svg',
+            url: require('../../resource/image/instagram.svg'),
+            key: 2,
         },
         {
-            url: '../../resource/image/youtube.svg',
+            url: require('../../resource/image/youtube.svg'),
+            key: 3,
         },
     ];
     render() {
@@ -75,13 +79,19 @@ class Footer extends React.Component<Props, {}> {
                     </div>
                 </section>
                 <section className="support-company">
-                    <div>
-                        {/*{this.footIconList.map((icon,idx) => (*/}
-                        {/*    <Icon url={require(icon.url)} key={idx}/>*/}
-                        {/*))}*/}
-                        {/*<img src={require('../../resource/image/facebook.svg')}/>*/}
+                    <div className="media-icon">
+                        {this.footIconList.map((icon) => (
+                            <Icon
+                                size={20}
+                                url={icon.url}
+                                key={icon.key}
+                                posi="inline-block"
+                                style={{ marginLeft: '40px' }}
+                            />
+                        ))}
+                        {/*<img width={25} height={25} src={require('../../resource/image/facebook.svg')}/>*/}
                     </div>
-                    <div>
+                    <div className="license">
                         <div>Licence Terms</div>
                         <div>Privacy Policy</div>
                         <div>Terms of Use</div>
