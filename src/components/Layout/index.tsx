@@ -3,6 +3,7 @@ import React, { Fragment } from 'react';
 import Header, { navType } from '../Header';
 import Footer from '../Footer';
 import { Props } from '../../types';
+import './index.scss';
 
 class Layout extends React.Component<Props, {}> {
     navData: navType[] = [
@@ -19,8 +20,8 @@ class Layout extends React.Component<Props, {}> {
                 <main className="layout">
                     {/*<Aside/>*/}
                     <section className="layout-content">{this.props.children}</section>
+                    <Footer />
                 </main>
-                <Footer />
                 {/*<Loading/>*/}
             </Fragment>
         );
