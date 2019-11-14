@@ -1,14 +1,14 @@
 import { createStore, applyMiddleware, combineReducers, Store } from 'redux';
 import createSagaMiddleware, { END } from 'redux-saga';
 import rootReducer from '../redux-model';
+import rootSaga from '../sagas/index';
 
-// @ts-ignore
+const sagaMiddleware = createSagaMiddleware();
+
 export default function configureStore(initialState?: any): Store {
-    const sagaMiddleware = createSagaMiddleware();
     const store = createStore(rootReducer, initialState, applyMiddleware(sagaMiddleware));
-    // @ts-ignore
-    store.runSaga = sagaMiddleware.run;
-    // @ts-ignore
-    store.close = () => store.dispatch(END);
+    // 需要在创建Store以后通过run()方法调用rootSaga
+    sagaMiddleware.run(rootSaga);
+
     return store;
 }

@@ -6,8 +6,10 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import prodStore from './store/configureStore.prod'; // 生成环境
 import devStore from './store/configureStore.dev'; // 开发环境
+
+const store = process.env.NODE_ENV === 'production' ? prodStore() : devStore();
 ReactDOM.render(
-    <Provider store={process.env.NODE_ENV === 'production' ? prodStore() : devStore()}>
+    <Provider store={store}>
         <App />
     </Provider>,
     document.getElementById('root')
