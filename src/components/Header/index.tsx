@@ -23,7 +23,7 @@ class Header extends React.Component<IRON, { initState: string }> {
     public render() {
         const { nav, color, padding } = this.props;
         return (
-            <header>
+            <header className="header">
                 <div className="nav-menu-bread "></div>
                 <div className="font-logo">MUSICBED</div>
                 {nav.map((item) => (

@@ -1,4 +1,4 @@
-.btn{
+.btn {
   text-align: center;
   font-weight: 700;
   box-shadow: none;
@@ -8,7 +8,9 @@
 
 .effect-hover-expand:hover {
   color: rgb(39, 40, 42);
-}
-.effect-hover-expand:hover {
   transform: scale(1.02, 1.04);
+}
+
+.hover-shadow:hover{
+  opacity: 1;
 }

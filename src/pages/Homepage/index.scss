@@ -1,18 +1,22 @@
+/* stylelint-disable */
 @import "../../resource/css/base";
 
-.content-box{
-  padding: 20px 50px;
-  .module-page-1{
+.content-box {
+
+  .module-page-1 {
     height: 768px;
+    padding: 20px 50px;
     position: relative;
-    .css-video{
+
+    .css-video {
       position: relative;
       min-width: 100% !important;
       height: 100% !important;
       margin: 0;
       padding: 0;
       overflow: hidden;
-      video{
+
+      video {
         position: absolute;
         //z-index: 0;
         top: 50%;
@@ -25,30 +29,201 @@
         height: auto;
       }
     }
-    .desc{
+
+    .desc {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 40%;
+      font-size: 40px;
+      line-height: 40px;
+      font-family: Quarto;
+      color: rgb(255, 255, 255);
+      display: flex;
+      justify-content: center;
+      padding: 2.5rem;
+    }
+
+    @media only screen and (min-width: 600px) {
+      .desc {
+        opacity: 1;
+        animation: 0.5s ease-in 0s 1 normal none running;
+        font-size: 55px;
+        line-height: 55px;
+        font-weight: bold;
+        text-align: center;
+        z-index: 1;
+        padding: 0px 40px;
+        margin: 0px 0px 50px;
+      }
+    }
+
+    .btn-div {
       position: absolute;
       z-index: 2;
-      color: white;
-      font-weight: bold;
-      font-size: 45px;
-      top:550px;
-      left:50%;
-      transform: translateX(-50%);
+      left: 0;
+      right: 0;
+      bottom: 35%;
+      -webkit-box-align: center;
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      font-weight: 600;
+      -webkit-box-pack: center;
+      justify-content: center;
+      letter-spacing: 0.8px;
+      perspective: 1000px;
+      text-align: center;
+      transform: translateZ(0px);
+      white-space: nowrap;
+      pointer-events: inherit;
+      color: rgb(39, 40, 42);
+      font-family: proxima-nova, "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 16.8px;
+      height: 48px;
+      line-height: 16.8px;
+      text-transform: uppercase;
+      width: auto;
+      border-width: 0;
+      outline: 0;
+      text-decoration: none;
+      transition: all 0.1s linear 0s;
+      border-radius: 2px;
+      padding: 0 24px;
     }
-    .btn-div{
+
+    @media only screen and (min-width: 600px) {
+      .btn-div {
+        // Media setup
+      }
+    }
+  }
+
+
+  .module-page-2 {
+    width: 100%;
+    margin-top: 75px;
+    margin-bottom: 75px;
+    background-size: 56%;
+    padding-top: 90px;
+    position: relative;
+    overflow: hidden;
+
+    .css-video {
       position: absolute;
-      z-index: 2;
-      top:640px;
-      left:50%;
-      transform: translateX(-50%);
+      top: 0px;
+      left: -10px;
+      width: 82%;
+      object-fit: cover;
+      overflow: hidden;
+
+      video {
+        clip-path: inset(2px);
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+      }
+    }
+
+    .cover {
+      background: url('../../resource/image/iMac_Perspective_SharonIrving.png') 30px 0px / contain no-repeat;
+
+      .cover-desc {
+        position: relative;
+        top: inherit;
+        left: inherit;
+        max-width: 448px;
+        box-sizing: border-box;
+        padding: 40% 50px 0px 40px;
+        margin: auto;
+
+        // license 描述
+        .license-desc {
+          font-size: 25px;
+          text-align: center;
+          color: rgb(39, 40, 42);
+          font-weight: 700;
+          line-height: 25px;
+          margin-bottom: 15px;
+        }
+
+        @media only screen and (min-width: 600px) {
+          .license-desc {
+            font-size: 36px;
+            line-height: 48px;
+            text-align: left;
+          }
+        }
+        // feature描述
+        .feature-desc {
+          font-size: 15px;
+          color: rgb(143, 145, 148);
+          line-height: 21px;
+          margin-bottom: 35px;
+          text-align: center;
+        }
+
+        @media only screen and (min-width: 600px) {
+          .feature-desc {
+            text-align: left;
+            font-size: 18px;
+            line-height: 30px;
+          }
+        }
+
+        // 按钮  icon
+        .go-songs-btn {
+          font-size: 14px;
+          font-weight: normal;
+          text-transform: uppercase;
+          max-width: 355px;
+          display: block;
+          border-radius: 2px;
+          transition: all 0.2s ease 0s;
+        }
+
+        @media only screen and (min-width: 900px) {
+          .go-songs-btn {
+            display: inline-block;
+          }
+        }
+
+      }
+
+      @media only screen and (min-width: 1440px) {
+        .cover-desc {
+          left: 70%;
+        }
+      }
+
+      @media only screen and (min-width: 900px) {
+        .cover-desc {
+          position: absolute;
+          top: 60%;
+          left: 60%;
+          padding-top: 0px;
+        }
+      }
+    }
+
+    .cover-g {
+      padding-top: 64%;
+      position: relative;
+    }
+
+    @media only screen and (min-width: 900px) {
+      .cover.cover-g {
+        background: url('../../resource/image/iMac_Perspective_SharonIrving.png') 30px 0px / contain no-repeat;
+      }
+    }
+    @media only screen and (min-width: 600px) {
+      .css-video {
+        width: 70%;
+      }
     }
   }
-  .module-page-2{
+
+  .module-page-3 {
     height: 768px;
-    background: #2d4054;
-  }
-  .module-page-3{
-    height: 768px;
-    background: #2d4054;
   }
 }

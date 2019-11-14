@@ -1,17 +1,19 @@
 /**
  * Created by Owen.chen on 2019/11/9
  */
-module.exports={
+module.exports = {
     extends: 'stylelint-config-standard',
     // 插件
     plugins: ['stylelint-scss'],
     // 忽略一些文件检测类型
-    ignoreFiles: ['node_modules/**/*.scss','**/*.ts','**/*.md','**/*.tsx','**/*.js'],
+    ignoreFiles: ['node_modules/**/*.scss', '**/*.ts', '**/*.md', '**/*.tsx', '**/*.js'],
     // @mixin @include等内容规则
     rules: {
         indentation: 2,
-        "at-rule-no-unknown": null,
-        "scss/at-rule-no-unknown":true,
-        "no-invalid-double-slash-comments":true
-    }
-}
+        'at-rule-no-unknown': null,
+        'scss/at-rule-no-unknown': true,
+        'no-invalid-double-slash-comments': true,
+        'no-descending-specificity': null,
+        ' no-duplicate-selectors': null,
+    },
+};

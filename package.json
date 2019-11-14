@@ -96,11 +96,6 @@
       "npm run eslint",
       "prettier .prettierrc.js --write",
       "git add"
-    ],
-    "src/**/*.{scss,css}": [
-      "stylelint --config=.stylelintrc.js --fix",
-      "prettier --config .stylelintrc.js --write",
-      "git add"
     ]
   },
   "eslintConfig": {
