@@ -1,16 +1,14 @@
 import React from 'react';
-import { AppState } from '../../store';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import { Add, Reduce } from '../../store/couter/actions';
+import { Add, Reduce } from '../../redux-model/couter/actions';
 
 interface IRON {
-    count: number;
-    add: () => void;
-    reduce: () => void;
+    count?: number;
+    add?: () => void;
+    reduce?: () => void;
 }
-
-const mapStateToProps = (state: AppState) => {
+const mapStateToProps = (state: any) => {
     return {
         count: state.CounterReducer,
     };
@@ -23,17 +21,6 @@ const mapActionsToProps = (dispatch: Dispatch) => ({
 
 @(connect(mapStateToProps, mapActionsToProps) as any)
 class Test extends React.PureComponent<IRON> {
-    list = [
-        {
-            name: '22',
-            key: 1,
-        },
-        {
-            name: '33',
-            key: 2,
-        },
-    ];
-
     public render() {
         const { count, add, reduce } = this.props;
         return (

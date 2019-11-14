@@ -1,8 +1,8 @@
 import React from 'react';
-// import cx from 'classnames';
 import { Props } from '../../types';
 import './index.scss';
 import Button from '../../components/Button';
+// import TestPage from '../TestPage';
 
 const Homepage = (props: Props) => {
     return (
@@ -13,7 +13,7 @@ const Homepage = (props: Props) => {
                     <Button
                         text={'CREATE AN ACCOUNT'}
                         size={{ height: 50, width: 300 }}
-                        callback={() => console.log(22)}
+                        callback={() => alert('waiting')}
                         className={'create-btn'}
                     />
                 </div>
@@ -79,7 +79,7 @@ const Homepage = (props: Props) => {
                     </div>
                 </div>
             </div>
-            <div className="module-page-3">3</div>
+            <div className="module-page-3"></div>
         </section>
     );
 };
