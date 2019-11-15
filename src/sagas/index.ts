@@ -1,6 +1,8 @@
-import { take, takeLatest, takeEvery, put, call, fork, select, all } from 'redux-saga/effects';
-import { getAll } from '../api/index';
+import { call, fork } from 'redux-saga/effects';
+
+import { asyAdd, watchReduce } from '../redux-model/counter-saga/saga';
 
 export default function* rootSaga() {
-    yield console.log('saga start');
+    yield fork(asyAdd);
+    yield fork(watchReduce);
 }

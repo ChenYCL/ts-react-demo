@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import { Add, Reduce } from '../../redux-model/couter/actions';
+import { Add, Reduce } from '../../redux-model/counter-saga/actions';
 
 interface IRON {
     count?: number;
@@ -10,7 +10,7 @@ interface IRON {
 }
 const mapStateToProps = (state: any) => {
     return {
-        count: state.CounterReducer,
+        count: state.sagaAsyncCount,
     };
 };
 

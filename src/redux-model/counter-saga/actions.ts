@@ -1,12 +1,12 @@
-import { ADD, REDUCE } from './types';
+import { ADD, REDUCE, AddAction, ReduceAction } from './types';
 
-export function Add() {
+export function Add(): AddAction {
     return {
         type: ADD,
     };
 }
 
-export function Reduce() {
+export function Reduce(): ReduceAction {
     return {
         type: REDUCE,
     };

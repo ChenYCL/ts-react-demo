@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import { CounterReducer } from './couter/reducers';
+import { sagaAsyncCount } from './counter-saga/reducers';
 
 export default combineReducers({
-    CounterReducer,
+    sagaAsyncCount,
 });

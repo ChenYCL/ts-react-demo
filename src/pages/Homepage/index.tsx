@@ -2,7 +2,7 @@ import React from 'react';
 import { Props } from '../../types';
 import './index.scss';
 import Button from '../../components/Button';
-// import TestPage from '../TestPage';
+import TestPage from '../TestPage';
 
 const Homepage = (props: Props) => {
     return (
@@ -79,7 +79,9 @@ const Homepage = (props: Props) => {
                     </div>
                 </div>
             </div>
-            <div className="module-page-3"></div>
+            <div className="module-page-3">
+                <TestPage />
+            </div>
         </section>
     );
 };

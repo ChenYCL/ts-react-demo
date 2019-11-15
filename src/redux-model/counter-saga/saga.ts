@@ -1,7 +1,22 @@
-import { call, put, takeEvery, takeLatest, delay } from 'redux-saga/effects';
 import { Add, Reduce } from './actions';
+import { put, call, take, delay, takeEvery } from 'redux-saga/effects';
 
-export function* addAsync() {
-    yield delay(1000);
+// actionChannel action的缓存队列
+
+export function* asyAdd() {
+    yield delay(5000);
     yield put(Add());
 }
+
+export function* watchReduce() {
+    yield takeEvery('REDUCE', () => console.log('减少检测到'));
+}
+
+// 替换内容
+
+// function * watchAdd(){
+//     while(true){
+//         yield take('Reduce');
+//         console.log('减少被检测到')
+//       }
+// }
