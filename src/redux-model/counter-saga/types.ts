@@ -8,7 +8,6 @@ export interface AddAction {
 export interface ReduceAction {
     type: typeof REDUCE;
 }
-
 export type countType = number;
 
 export type CounterActionTypes = AddAction | ReduceAction;

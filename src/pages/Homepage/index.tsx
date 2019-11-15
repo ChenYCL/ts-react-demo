@@ -80,7 +80,57 @@ const Homepage = (props: Props) => {
                 </div>
             </div>
             <div className="module-page-3">
-                <TestPage />
+                {/* <TestPage /> */}
+                <div className="desc">
+                    <div className="text">Trusted by the world’s top brands.</div>
+                    <Button text="SATRT BROWSINGS" color="blue" textColor="white" />
+                </div>
+                <div className="company-wall">
+                    <section>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div>google</div>
+                        <div>hulu</div>
+                        <div></div>
+                        <div>nike</div>
+                    </section>
+                    <section>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div>google</div>
+                        <div>hulu</div>
+                        <div></div>
+                        <div>nike</div>
+                    </section>
+                    <section>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div>google</div>
+                        <div>hulu</div>
+                        <div></div>
+                        <div>nike</div>
+                    </section>
+                    <section>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div>google</div>
+                        <div>hulu</div>
+                        <div></div>
+                        <div>nike</div>
+                    </section>
+                </div>
             </div>
         </section>
     );
