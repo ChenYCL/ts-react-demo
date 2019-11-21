@@ -55,8 +55,8 @@
         font-weight: bold;
         text-align: center;
         z-index: 1;
-        padding: 0px 40px;
-        margin: 0px 0px 50px;
+        padding: 0 40px;
+        margin: 0 0 50px;
       }
     }
 
@@ -98,7 +98,7 @@
 
   @media only screen and (min-width: 600px) {
     .module-page-1 {
-      padding: 0px 40px 58px;
+      padding: 0 40px 58px;
     }
   }
 
@@ -312,7 +312,7 @@
             // 有图片的 wrapper
             .wrapper {
               position: absolute;
-              inset: 0px;
+              inset: 0;
               display: flex;
               flex-direction: column;
               -moz-box-pack: center;

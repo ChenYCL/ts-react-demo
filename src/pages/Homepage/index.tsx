@@ -6,11 +6,11 @@ import Button from '../../components/Button';
 
 /**
  * 生成固定板块
- * @param arr
+ *
  */
-const renderBlock = () => {
+const renderBlock = (key: number) => {
     return (
-        <div className="block">
+        <div className="block" key={key}>
             <div className="inner fadeOne">
                 <div className="wrapper">
                     <img src="https://cdn.musicbed.com/image/upload/fl_sanitize/static/home/hulu.svg" alt="Hulu" />
@@ -102,7 +102,7 @@ const Homepage = (props: Props) => {
                     <Button
                         className="desc-btn"
                         text="SATRT BROWSINGS"
-                        size={{ height: 50, width: 254 }}
+                        size={{ height: 50, width: 300 }}
                         color="green"
                         textColor="white"
                     />
@@ -160,7 +160,7 @@ const Homepage = (props: Props) => {
                     </section>
                     {/*  移动端 适配*/}
                     <section className="GridRowMobile  company-wall-column">
-                        {new Array(9).fill(0).map((item, index) => renderBlock())}
+                        {new Array(9).fill(0).map((item, index) => renderBlock(index))}
                     </section>
                     {/*-----*/}
                     <section className="company-wall-column">
@@ -300,14 +300,14 @@ const Homepage = (props: Props) => {
                     </section>
                     {/*  移动端 适配*/}
                     <section className="GridRowMobile   company-wall-column">
-                        {new Array(9).fill(0).map((item, index) => renderBlock())}
+                        {new Array(9).fill(0).map((item, index) => renderBlock(index))}
                     </section>
                     {/*--ends--*/}
                     <section className="company-wall-column">
-                        {new Array(9).fill(0).map((item, index) => renderBlock())}
+                        {new Array(9).fill(0).map((item, index) => renderBlock(index))}
                     </section>
                     <section className="company-wall-column">
-                        {new Array(9).fill(0).map((item, index) => renderBlock())}
+                        {new Array(9).fill(0).map((item, index) => renderBlock(index))}
                     </section>
                 </div>
             </div>

@@ -1,0 +1,40 @@
+version: 2
+jobs:
+  build:
+    branches:
+      only:
+        - master
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:latest
+
+    working_directory: ~/repo
+    environment:
+      - SOURCE_BRANCH: src
+      - TARGET_BRANCH: master
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "9b:dd:b2:dc:c6:77:c1:41:aa:68:44:de:08:35:1e:ec"
+      - checkout
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run:
+          name: Install dependencies
+          command: npm install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run:
+          name: chmod
+          command: sudo chmod 777 ./deploy.sh
+      - deploy:
+          name: Deploy
+          command: sh ./deploy.sh
