@@ -2,7 +2,23 @@ import React from 'react';
 import { Props } from '../../types';
 import './index.scss';
 import Button from '../../components/Button';
-import TestPage from '../TestPage';
+// import TestPage from '../TestPage';
+
+/**
+ * 生成固定板块
+ * @param arr
+ */
+const renderBlock = () => {
+    return (
+        <div className="block">
+            <div className="inner fadeOne">
+                <div className="wrapper">
+                    <img src="https://cdn.musicbed.com/image/upload/fl_sanitize/static/home/hulu.svg" alt="Hulu" />
+                </div>
+            </div>
+        </div>
+    );
+};
 
 const Homepage = (props: Props) => {
     return (
@@ -83,52 +99,215 @@ const Homepage = (props: Props) => {
                 {/* <TestPage /> */}
                 <div className="desc">
                     <div className="text">Trusted by the world’s top brands.</div>
-                    <Button text="SATRT BROWSINGS" color="blue" textColor="white" />
+                    <Button
+                        className="desc-btn"
+                        text="SATRT BROWSINGS"
+                        size={{ height: 50, width: 254 }}
+                        color="green"
+                        textColor="white"
+                    />
                 </div>
                 <div className="company-wall">
-                    <section>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div>google</div>
-                        <div>hulu</div>
-                        <div></div>
-                        <div>nike</div>
+                    <section className="company-wall-column">
+                        <div className="block">
+                            <div className="inner btn bln"></div>
+                        </div>
+                        <div className="block">
+                            <div className="inner btn bln"></div>
+                        </div>
+                        <div className="block">
+                            <div className="inner btn bln"></div>
+                        </div>
+                        <div className="block">
+                            <div className="inner btn bln"></div>
+                        </div>
+                        <div className="block">
+                            <div className="inner btn bln"></div>
+                        </div>
+                        <div className="block">
+                            <div className="inner fadeOne">
+                                <div className="wrapper">
+                                    <img
+                                        src="https://cdn.musicbed.com/image/upload/fl_sanitize/static/home/google.svg"
+                                        alt="Google"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="block">
+                            <div className="inner fadeOne">
+                                <div className="wrapper">
+                                    <img
+                                        src="https://cdn.musicbed.com/image/upload/fl_sanitize/static/home/hulu.svg"
+                                        alt="Hulu"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="block">
+                            <div className="inner btn bln"></div>
+                        </div>
+                        <div className="block">
+                            <div className="inner fadeOne">
+                                <div className="wrapper">
+                                    <img
+                                        src="https://cdn.musicbed.com/image/upload/fl_sanitize/static/home/nike.svg"
+                                        alt="Nike"
+                                    />
+                                </div>
+                            </div>
+                        </div>
                     </section>
-                    <section>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div>google</div>
-                        <div>hulu</div>
-                        <div></div>
-                        <div>nike</div>
+                    {/*  移动端 适配*/}
+                    <section className="GridRowMobile  company-wall-column">
+                        {new Array(9).fill(0).map((item, index) => renderBlock())}
                     </section>
-                    <section>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div>google</div>
-                        <div>hulu</div>
-                        <div></div>
-                        <div>nike</div>
+                    {/*-----*/}
+                    <section className="company-wall-column">
+                        <div className="left">
+                            <div className="top">
+                                <div className="block">
+                                    <div className="inner btn bln"></div>
+                                </div>
+                                <div className="block">
+                                    <div className="inner fadeOne">
+                                        <div className="wrapper">
+                                            <img
+                                                src="https://cdn.musicbed.com/image/upload/fl_sanitize/static/home/nike.svg"
+                                                alt="Nike"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="block">
+                                    <div className="inner fadeOne">
+                                        <div className="wrapper">
+                                            <img
+                                                src="https://cdn.musicbed.com/image/upload/fl_sanitize/static/home/nike.svg"
+                                                alt="Nike"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="block">
+                                    <div className="inner fadeOne">
+                                        <div className="wrapper">
+                                            <img
+                                                src="https://cdn.musicbed.com/image/upload/fl_sanitize/static/home/nike.svg"
+                                                alt="Nike"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="bottom">
+                                <div className="block">
+                                    <div className="inner fadeOne">
+                                        <div className="wrapper">
+                                            <img
+                                                src="https://cdn.musicbed.com/image/upload/fl_sanitize/static/home/nike.svg"
+                                                alt="Nike"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="block">
+                                    <div className="inner fadeOne">
+                                        <div className="wrapper">
+                                            <img
+                                                src="https://cdn.musicbed.com/image/upload/fl_sanitize/static/home/nike.svg"
+                                                alt="Nike"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="block">
+                                    <div className="inner fadeOne">
+                                        <div className="wrapper">
+                                            <img
+                                                src="https://cdn.musicbed.com/image/upload/fl_sanitize/static/home/nike.svg"
+                                                alt="Nike"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="block">
+                                    <div className="inner fadeOne">
+                                        <div className="wrapper">
+                                            <img
+                                                src="https://cdn.musicbed.com/image/upload/fl_sanitize/static/home/nike.svg"
+                                                alt="Nike"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/*视频剧中区域*/}
+                        <div className="center">
+                            <div className="box">
+                                <div className="about-us-video-wrapper">
+                                    <div className="video">
+                                        <iframe
+                                            src="https://player.vimeo.com/video/221028986?color=09a6a7&amp;portrait=0"
+                                            width="500"
+                                            height="375"
+                                            frameBorder="0"></iframe>
+                                    </div>
+                                    {/*   点击播放 opcaity 0.1 display none*/}
+                                    <div className="cover-image">
+                                        <img
+                                            src="https://cdn.musicbed.com/image/upload/c_limit,dpr_1,f_auto,h_246,q_auto,w_614/static/welcome/Reel_poster.jpg"
+                                            alt="About Us"
+                                        />
+                                        <div className="cover-btn">
+                                            <img
+                                                src="https://cdn.musicbed.com/image/upload/fl_sanitize/static/home/Play-Button.svg"
+                                                alt="Play Button"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/*右侧*/}
+                        <div className="right">
+                            <div className="top">
+                                <div className="block">
+                                    <div className="inner fadeOne">
+                                        <div className="wrapper">
+                                            <img
+                                                src="https://cdn.musicbed.com/image/upload/fl_sanitize/static/home/nike.svg"
+                                                alt="Nike"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="bottom">
+                                <div className="block">
+                                    <div className="inner fadeOne">
+                                        <div className="wrapper">
+                                            <img
+                                                src="https://cdn.musicbed.com/image/upload/fl_sanitize/static/home/nike.svg"
+                                                alt="Nike"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </section>
-                    <section>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div>google</div>
-                        <div>hulu</div>
-                        <div></div>
-                        <div>nike</div>
+                    {/*  移动端 适配*/}
+                    <section className="GridRowMobile   company-wall-column">
+                        {new Array(9).fill(0).map((item, index) => renderBlock())}
+                    </section>
+                    {/*--ends--*/}
+                    <section className="company-wall-column">
+                        {new Array(9).fill(0).map((item, index) => renderBlock())}
+                    </section>
+                    <section className="company-wall-column">
+                        {new Array(9).fill(0).map((item, index) => renderBlock())}
                     </section>
                 </div>
             </div>

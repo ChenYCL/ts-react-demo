@@ -4,8 +4,10 @@
 .content-box {
 
   .module-page-1 {
-    height: 768px;
-    padding: 20px 50px;
+    height: calc(-7.5em + 100vh);
+    padding: 0px 20px 27px;
+    width: 100%;
+    box-sizing: border-box;
     position: relative;
 
     .css-video {
@@ -92,13 +94,13 @@
       padding: 0 24px;
     }
 
-    @media only screen and (min-width: 600px) {
-      .btn-div {
-        // Media setup
-      }
-    }
   }
 
+  @media only screen and (min-width: 600px) {
+    .module-page-1 {
+      padding: 0px 40px 58px;
+    }
+  }
 
   .module-page-2 {
     width: 100%;
@@ -224,58 +226,319 @@
   }
 
   .module-page-3 {
-    height: 768px;
+    //height: 744px;
+    padding-bottom: 270px;
     position: relative;
     overflow: hidden;
-    .desc{
-      top: 65px;
-      left: 12%;
-      text-align: left;
-      padding: 0px;
-      max-width: 425px;
+    z-index: 1;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0) radial-gradient(circle at center center, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 100%) repeat scroll 0% 0%;
+      z-index: 1;
+    }
+
+    .desc {
       position: absolute;
       bottom: 80px;
       width: 100%;
-      padding: 0px 3em;
       z-index: 2;
       text-align: center;
-      .text{
-        font-size: 40px;
-        margin-bottom: 40px;
-        text-align: left;
-        color:rgb(39, 40, 42);
-        font-weight: 700;
 
+      .text {
+        color: rgb(39, 40, 42);
+        font-size: 25px;
+        font-weight: 700;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      .desc-btn {
+        font-size: 14px;
+        color: rgb(255, 255, 255);
+        background: rgb(9, 166, 167) none repeat scroll 0 0;
+        border-radius: 2px;
+        text-transform: uppercase;
+        padding: 12px 20px;
+        width: 100%;
+        transition: all 0.2s ease 0s;
+        text-align: center;
+        display: inline-block;
+      }
+
+
+      @media only screen and (min-width: 900px) {
+        .text {
+          font-size: 40px;
+        }
+      }
+      @media only screen and (min-width: 600px) {
+        .text {
+          font-size: 30px;
+          margin-bottom: 40px;
+          text-align: left;
+        }
+        .desc-btn {
+          padding: 15px 60px;
+          width: auto;
+        }
       }
     }
-    .company-wall{
+
+
+    // ~~~~ 如何构建可缩放的flex 盒子 等比缩放图片 ~~~~ 图片要求svg
+    .company-wall {
       display: flex;
       flex-direction: column;
-      border-right: 1px solid rgb(200, 207, 210);
-      -moz-box-align: center;
       align-items: center;
-      section{
+
+      .company-wall-column {
         display: flex;
         width: 100%;
-        &>div{
+        // 建立框子大小
+        .block {
           position: relative;
-          flex:1 1 200px;
+          flex: 1 1 200px;
+          // 盒子填充
+          .inner {
+            background-size: cover;
+            position: absolute;
+            inset: 0;
+            border-left: 1px solid rgb(200, 207, 210);
+            border-top: 1px solid rgb(200, 207, 210);
+
+            // 有图片的 wrapper
+            .wrapper {
+              position: absolute;
+              inset: 0px;
+              display: flex;
+              flex-direction: column;
+              -moz-box-pack: center;
+              justify-content: center;
+              -moz-box-align: center;
+              align-items: center;
+              text-align: center;
+              padding: 25px;
+
+              img {
+                border-style: none;
+                max-width: 100%;
+              }
+            }
+          }
+
+          .inner.bln {
+            border-left: medium none;
+          }
+
+          .inner.btn {
+            border-top: medium none;
+          }
         }
-        &>div::before{
+
+        // 直接伪元素填充
+        .block::before {
           display: block;
           content: "";
           width: 100%;
           height: 100%;
+          // 关键步骤 撑开高度
           padding-top: calc(89.9039%) !important;
+        }
+
+        /*
+          带视频的内容体  div  .left .center .right
+        */
+
+        .left {
+          display: none;
+          flex: 4 1 656px;
+          flex-direction: column;
+
+          .top, .bottom {
+            width: 900px;
+            display: flex;
+
+          }
+
+          // 屏幕宽度> 900px
+          @media only screen and (min-width: 900px) {
+            .top, .bottom {
+              width: 100%;
+            }
+          }
+        }
+
+
+        .center {
+          // 视频盒子
+          display: flex;
+          flex: 4 1 656px;
+          border-top: 1px solid rgb(200, 207, 210);
+          border-left: 1px solid rgb(200, 207, 210);
+          -moz-box-align: center;
+          align-items: center;
+          -moz-box-pack: center;
+          justify-content: center;
+
+          .box {
+            width: 100%;
+            position: relative;
+            z-index: 3;
+            padding: 10px;
+
+            // video-wrapper
+            .about-us-video-wrapper {
+              position: relative;
+              overflow: hidden;
+
+              // 视频主体内容
+              .video {
+                position: relative;
+                padding-bottom: 43%;
+                height: 0;
+                margin-bottom: 0;
+                overflow: hidden;
+
+                iframe {
+                  height: 100%;
+                  left: 0;
+                  position: absolute;
+                  top: 0;
+                  width: 100%;
+                }
+              }
+
+              // 视频遮罩 图层
+              .cover-image {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 10;
+                cursor: pointer;
+                height: 100%;
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  border-style: none;
+                }
+
+                // 点击按钮
+                .cover-btn {
+                  height: 50px;
+                  width: 75px;
+                  background-size: 95px 95px;
+                  position: absolute;
+                  top: 50%;
+                  margin-top: -25px;
+                  left: 50%;
+                  margin-left: -37.5px;
+
+                  // 按钮图片
+                  img {
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    margin-top: 0;
+                    margin-left: 0;
+                    border-style: none;
+                  }
+
+                  @media only screen and (min-width: 900px) {
+                    img {
+                      width: 100% !important;
+                    }
+                  }
+                }
+
+                // 屏幕小于 900 宽度
+                @media only screen and (min-width: 900px) {
+                  img {
+                    width: inherit;
+                  }
+                }
+
+                // 屏幕小于600宽度
+                @media only screen and (min-width: 600px) {
+                  .cover-btn {
+                    height: 66px;
+                    width: 100px;
+                    margin-left: -50px;
+                    margin-top: -33px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .right {
+          display: none;
+          flex: 1 1 164px;
+          flex-direction: column;
+
+          .top, .bottom {
+            width: 900px;
+            display: flex;
+
+          }
+
+          // 屏幕宽度小于 900px
+          @media only screen and (min-width: 900px) {
+            .top, .bottom {
+              width: 100%;
+            }
+          }
+        }
+
+
+        // 至少  900px  才有 左右
+        @media only screen and (min-width: 900px) {
+          .left, .right {
+            display: flex;
+          }
+        }
+
+      }
+
+      @media only screen and (min-width: 900px) {
+        .GridRowMobile {
+          display: none;
+          width: 100%;
         }
       }
     }
+
+    @media only screen and (min-width: 900px) {
+      .company-wall {
+        align-items: flex-start;
+      }
+      .desc {
+        top: 85px;
+        max-width: 440px;
+      }
+    }
+    @media only screen and (min-width: 600px) {
+      .desc {
+        bottom: inherit;
+        top: 65px;
+        left: 12%;
+        text-align: left;
+        padding: 0;
+        max-width: 280px;
+      }
+    }
   }
-  .module-page-3::after{
-    content: "";
-    position: absolute;
-    inset: 0px;
-    //background:rgba(0, 0, 0, 0) radial-gradient(circle at center center, rgba(255, 255, 255, 0) 0%,rgb(255, 255, 255) 100%) repeat scroll 0% 0%;
+
+  @media only screen and (min-width: 600px) {
+    .module-page-3 {
+      padding-bottom: 0;
+      padding-top: 170px;
+    }
   }
-  
 }
+

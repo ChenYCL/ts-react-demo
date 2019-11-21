@@ -21,16 +21,16 @@ footer {
 
    .footer-info {
     width: 100%;
-    display: flex;
+    display: inherit;
     justify-content: center;
     padding: 72px 0;
     background-color: rgb(247, 250, 252);
 
     .left-section {
       text-align: center;
-      flex: 1;
       border-right: 1px solid rgb(224, 230, 233);
-
+      padding-bottom: 30px;
+      flex: 1;
       .desc {
         transition: all 0.2s linear 0s;
         color: rgb(39, 40, 42);
@@ -68,7 +68,7 @@ footer {
         letter-spacing: inherit;
       }
 
-      section.icon-wrapper {
+      .icon-wrapper {
         padding-top: 30px;
         display: flex;
         justify-content: center;
@@ -123,9 +123,9 @@ footer {
     .right-section {
       display: flex;
       justify-content: space-around;
-      padding: 0 100px;
       flex: 1;
-
+      padding-top: 30px;
+      border-top: 1px solid rgb(224, 230, 233);
       h3 {
         font-size: 14px;
         font-family: proxima-nova, Proxima Nova, Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -156,6 +156,21 @@ footer {
         }
       }
     }
+
+     @media only screen and (min-width: 900px) {
+        .right-section{
+          padding: 0 100px;
+          border-top: none;
+        }
+        .left-section{
+          padding-bottom: 0;
+        }
+     }
+  }
+  @media only screen and (min-width: 900px) {
+     .footer-info{
+       display: flex;
+     }
   }
   // 底部导航 license
   .support-company {
