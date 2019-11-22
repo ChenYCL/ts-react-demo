@@ -306,18 +306,25 @@
             background-size: cover;
             position: absolute;
             inset: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
             border-left: 1px solid rgb(200, 207, 210);
             border-top: 1px solid rgb(200, 207, 210);
 
             // 有图片的 wrapper
             .wrapper {
               position: absolute;
-              inset: 0;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
               display: flex;
               flex-direction: column;
-              -moz-box-pack: center;
+              -webkit-box-pack: center;
               justify-content: center;
-              -moz-box-align: center;
+              -webkit-box-align: center;
               align-items: center;
               text-align: center;
               padding: 25px;
@@ -335,6 +342,7 @@
 
           .inner.btn {
             border-top: medium none;
+            border-radius: 0;
           }
         }
 
@@ -532,6 +540,18 @@
         max-width: 280px;
       }
     }
+  }
+
+  // 填充阴影效果
+  .module-page-3::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 100%);
   }
 
   @media only screen and (min-width: 600px) {

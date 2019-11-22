@@ -4,18 +4,38 @@ import './index.scss';
 import Button from '../../components/Button';
 // import TestPage from '../TestPage';
 
+interface iconT {
+    key: number;
+    imgName: string;
+}
+
 /**
  * 生成固定板块
+ *  如何 约束 obj 为  [{key:0,imgName:'google'},{key:1,imgName:'youtube'}]
  *
  */
-const renderBlock = (key: number) => {
+const renderBlock = (obj: iconT) => {
+    if (obj.imgName === '') {
+        return emptyBlock(obj.key);
+    }
     return (
-        <div className="block" key={key}>
+        <div className="block" key={obj.key}>
             <div className="inner fadeOne">
                 <div className="wrapper">
-                    <img src="https://cdn.musicbed.com/image/upload/fl_sanitize/static/home/hulu.svg" alt="Hulu" />
+                    <img
+                        src={`https://cdn.musicbed.com/image/upload/fl_sanitize/static/home/${obj.imgName}.svg`}
+                        alt={`${obj.imgName}`}
+                    />
                 </div>
             </div>
+        </div>
+    );
+};
+
+const emptyBlock = (key: number) => {
+    return (
+        <div className="block" key={key}>
+            <div className="inner  "></div>
         </div>
     );
 };
@@ -103,7 +123,7 @@ const Homepage = (props: Props) => {
                         className="desc-btn"
                         text="SATRT BROWSINGS"
                         size={{ height: 50, width: 300 }}
-                        color="green"
+                        color="rgb(9, 166, 167)"
                         textColor="white"
                     />
                 </div>
@@ -124,43 +144,29 @@ const Homepage = (props: Props) => {
                         <div className="block">
                             <div className="inner btn bln"></div>
                         </div>
+
+                        {[
+                            { key: 0, imgName: 'google' },
+                            { key: 1, imgName: 'hulu' },
+                        ].map((item) => renderBlock(item))}
                         <div className="block">
-                            <div className="inner fadeOne">
-                                <div className="wrapper">
-                                    <img
-                                        src="https://cdn.musicbed.com/image/upload/fl_sanitize/static/home/google.svg"
-                                        alt="Google"
-                                    />
-                                </div>
-                            </div>
+                            <div className="inner btn "></div>
                         </div>
-                        <div className="block">
-                            <div className="inner fadeOne">
-                                <div className="wrapper">
-                                    <img
-                                        src="https://cdn.musicbed.com/image/upload/fl_sanitize/static/home/hulu.svg"
-                                        alt="Hulu"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="block">
-                            <div className="inner btn bln"></div>
-                        </div>
-                        <div className="block">
-                            <div className="inner fadeOne">
-                                <div className="wrapper">
-                                    <img
-                                        src="https://cdn.musicbed.com/image/upload/fl_sanitize/static/home/nike.svg"
-                                        alt="Nike"
-                                    />
-                                </div>
-                            </div>
-                        </div>
+                        {[{ key: 0, imgName: 'nike' }].map((item) => renderBlock(item))}
                     </section>
                     {/*  移动端 适配*/}
                     <section className="GridRowMobile  company-wall-column">
-                        {new Array(9).fill(0).map((item, index) => renderBlock(index))}
+                        {[
+                            { key: 0, imgName: 'progressive' },
+                            { key: 1, imgName: 'abc' },
+                            { key: 2, imgName: 'land-rover' },
+                            { key: 3, imgName: 'nat-geo' },
+                            { key: 4, imgName: 'mcclaren' },
+                            { key: 5, imgName: 'chick-fil-a' },
+                            { key: 6, imgName: 'southwest' },
+                            { key: 7, imgName: 'verizon' },
+                            { key: 8, imgName: 'nikon' },
+                        ].map((item) => renderBlock(item))}
                     </section>
                     {/*-----*/}
                     <section className="company-wall-column">
@@ -169,78 +175,19 @@ const Homepage = (props: Props) => {
                                 <div className="block">
                                     <div className="inner btn bln"></div>
                                 </div>
-                                <div className="block">
-                                    <div className="inner fadeOne">
-                                        <div className="wrapper">
-                                            <img
-                                                src="https://cdn.musicbed.com/image/upload/fl_sanitize/static/home/nike.svg"
-                                                alt="Nike"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="block">
-                                    <div className="inner fadeOne">
-                                        <div className="wrapper">
-                                            <img
-                                                src="https://cdn.musicbed.com/image/upload/fl_sanitize/static/home/nike.svg"
-                                                alt="Nike"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="block">
-                                    <div className="inner fadeOne">
-                                        <div className="wrapper">
-                                            <img
-                                                src="https://cdn.musicbed.com/image/upload/fl_sanitize/static/home/nike.svg"
-                                                alt="Nike"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
+                                {[
+                                    { key: 0, imgName: 'abc' },
+                                    { key: 1, imgName: 'land-rover' },
+                                    { key: 2, imgName: 'nat-geo' },
+                                ].map((item) => renderBlock(item))}
                             </div>
                             <div className="bottom">
-                                <div className="block">
-                                    <div className="inner fadeOne">
-                                        <div className="wrapper">
-                                            <img
-                                                src="https://cdn.musicbed.com/image/upload/fl_sanitize/static/home/nike.svg"
-                                                alt="Nike"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="block">
-                                    <div className="inner fadeOne">
-                                        <div className="wrapper">
-                                            <img
-                                                src="https://cdn.musicbed.com/image/upload/fl_sanitize/static/home/nike.svg"
-                                                alt="Nike"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="block">
-                                    <div className="inner fadeOne">
-                                        <div className="wrapper">
-                                            <img
-                                                src="https://cdn.musicbed.com/image/upload/fl_sanitize/static/home/nike.svg"
-                                                alt="Nike"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="block">
-                                    <div className="inner fadeOne">
-                                        <div className="wrapper">
-                                            <img
-                                                src="https://cdn.musicbed.com/image/upload/fl_sanitize/static/home/nike.svg"
-                                                alt="Nike"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
+                                {[
+                                    { key: 0, imgName: 'mcclaren' },
+                                    { key: 1, imgName: 'chick-fil-a' },
+                                    { key: 2, imgName: 'samsung' },
+                                    { key: 3, imgName: 'lions-gate' },
+                                ].map((item) => renderBlock(item))}
                             </div>
                         </div>
                         {/*视频剧中区域*/}
@@ -273,41 +220,51 @@ const Homepage = (props: Props) => {
                         {/*右侧*/}
                         <div className="right">
                             <div className="top">
-                                <div className="block">
-                                    <div className="inner fadeOne">
-                                        <div className="wrapper">
-                                            <img
-                                                src="https://cdn.musicbed.com/image/upload/fl_sanitize/static/home/nike.svg"
-                                                alt="Nike"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
+                                {[{ key: 0, imgName: 'underarmour' }].map((item) => renderBlock(item))}
                             </div>
                             <div className="bottom">
-                                <div className="block">
-                                    <div className="inner fadeOne">
-                                        <div className="wrapper">
-                                            <img
-                                                src="https://cdn.musicbed.com/image/upload/fl_sanitize/static/home/nike.svg"
-                                                alt="Nike"
-                                            />
-                                        </div>
-                                    </div>
-                                </div>
+                                {[{ key: 0, imgName: 'twentieth-century' }].map((item) => renderBlock(item))}
                             </div>
                         </div>
                     </section>
                     {/*  移动端 适配*/}
                     <section className="GridRowMobile   company-wall-column">
-                        {new Array(9).fill(0).map((item, index) => renderBlock(index))}
+                        {[
+                            { key: 0, imgName: 'budweiser' },
+                            { key: 1, imgName: 'lexus' },
+                            { key: 2, imgName: 'samsung' },
+                            { key: 3, imgName: 'lions-gate' },
+                            { key: 4, imgName: 'underarmour' },
+                            { key: 5, imgName: 'twentieth-century' },
+                            { key: 6, imgName: 'boeing' },
+                            { key: 7, imgName: 'harley-davidson' },
+                            { key: 8, imgName: 'mercedes-bens' },
+                        ].map((item) => renderBlock(item))}
                     </section>
                     {/*--ends--*/}
                     <section className="company-wall-column">
-                        {new Array(9).fill(0).map((item, index) => renderBlock(index))}
+                        {[
+                            { key: 0, imgName: 'netflix' },
+                            { key: 1, imgName: 'nasa' },
+                            { key: 2, imgName: '' },
+                            { key: 3, imgName: 'amazon' },
+                            { key: 4, imgName: '' },
+                            { key: 5, imgName: 'facebook' },
+                            { key: 6, imgName: 'nbc' },
+                            { key: 7, imgName: 'lamborghini' },
+                            { key: 8, imgName: '' },
+                        ].map((item) => renderBlock(item))}
                     </section>
                     <section className="company-wall-column">
-                        {new Array(9).fill(0).map((item, index) => renderBlock(index))}
+                        {emptyBlock(0)}
+                        {emptyBlock(1)}
+                        {[{ key: 2, imgName: 'espn' }].map((item) => renderBlock(item))}
+                        {emptyBlock(2)}
+                        {emptyBlock(3)}
+                        {emptyBlock(4)}
+                        {[{ key: 6, imgName: 'microsoft' }].map((item) => renderBlock(item))}
+                        {emptyBlock(5)}
+                        {[{ key: 8, imgName: 'mcdonalds' }].map((item) => renderBlock(item))}
                     </section>
                 </div>
             </div>
