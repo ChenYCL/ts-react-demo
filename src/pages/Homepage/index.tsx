@@ -9,6 +9,14 @@ interface iconT {
     imgName: string;
 }
 
+const emptyBlock = (key: number) => {
+    return (
+        <div className="block" key={key}>
+            <div className="inner  "></div>
+        </div>
+    );
+};
+
 /**
  * 生成固定板块
  *  如何 约束 obj 为  [{key:0,imgName:'google'},{key:1,imgName:'youtube'}]
@@ -28,14 +36,6 @@ const renderBlock = (obj: iconT) => {
                     />
                 </div>
             </div>
-        </div>
-    );
-};
-
-const emptyBlock = (key: number) => {
-    return (
-        <div className="block" key={key}>
-            <div className="inner  "></div>
         </div>
     );
 };
