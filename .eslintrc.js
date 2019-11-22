@@ -1,7 +1,7 @@
 /**
  * Created by Owen.chen on 2019/11/9
  */
-
+const Process = require('process')
 module.exports = {
   parser: '@typescript-eslint/parser', // Specifies the ESLint parser
   extends: [
@@ -17,8 +17,8 @@ module.exports = {
       version: 'detect',
     },
     'import/resolver': {
-      webpack:{
-        config:'./config/webpack.config.js'
+      webpack: {
+        config: './config/webpack.config.js'
       }
     },
   },
@@ -35,7 +35,7 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': 1,
-    'no-console': ['warn', {allow: ['warn', 'error']}],
+    'no-console': Process.env.NODE_ENV === "production" ? 0 : 0,
     '@typescript-eslint/explicit-function-return-type': [
       // 'warn',
       'off',
@@ -56,6 +56,7 @@ module.exports = {
     '@typescript-eslint/no-this-alias': 0,
     '@typescript-eslint/triple-slash-reference': 0,
     '@typescript-eslint/class-name-casing': 0,
+    '@typescript-eslint/no-explicit-any': 0,
     // React相关校验规则
     'react/jsx-indent': [2, 4],
     'react/jsx-no-undef': [2, {allowGlobals: true}],
