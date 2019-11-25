@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { demoInterface } from './types';
-import { apiHost } from '../config';
+import { apiHost } from '../config/proxy';
 
 export async function getAll(): Promise<any> {
     return axios({

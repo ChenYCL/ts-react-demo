@@ -2,7 +2,7 @@ import React from 'react';
 import { Props } from '../../types';
 import './index.scss';
 import Button from '../../components/Button';
-// import TestPage from '../TestPage';
+import TestPage from '../TestPage';
 
 interface iconT {
     key: number;
@@ -43,6 +43,9 @@ const renderBlock = (obj: iconT) => {
 const Homepage = (props: Props) => {
     return (
         <section className="content-box">
+            <div>
+                <TestPage />
+            </div>
             <div className="module-page-1">
                 <div className="desc">Find the perfect song for your film</div>
                 <div className="btn-div">
@@ -258,13 +261,13 @@ const Homepage = (props: Props) => {
                     <section className="company-wall-column">
                         {emptyBlock(0)}
                         {emptyBlock(1)}
-                        {[{ key: 2, imgName: 'espn' }].map((item) => renderBlock(item))}
+                        {[{ key: 0, imgName: 'espn' }].map((item) => renderBlock(item))}
                         {emptyBlock(2)}
                         {emptyBlock(3)}
                         {emptyBlock(4)}
-                        {[{ key: 6, imgName: 'microsoft' }].map((item) => renderBlock(item))}
+                        {[{ key: 1, imgName: 'microsoft' }].map((item) => renderBlock(item))}
                         {emptyBlock(5)}
-                        {[{ key: 8, imgName: 'mcdonalds' }].map((item) => renderBlock(item))}
+                        {[{ key: 2, imgName: 'mcdonalds' }].map((item) => renderBlock(item))}
                     </section>
                 </div>
             </div>

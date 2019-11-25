@@ -1,8 +1,6 @@
-import { call, fork } from 'redux-saga/effects';
-
-import { asyAdd, watchReduce } from '../redux-model/counter-saga/saga';
+import { fork, ForkEffectDescriptor, SimpleEffect } from 'redux-saga/effects';
+import { countSaga } from '../pages/TestPage/saga';
 
 export default function* rootSaga() {
-    yield fork(asyAdd);
-    yield fork(watchReduce);
+    yield fork(countSaga);
 }
