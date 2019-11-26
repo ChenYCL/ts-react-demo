@@ -17,6 +17,7 @@ export function* watchReduce() {
 export function* countSaga() {
     const [auto, watch] = yield all([call(autoAdd), call(watchReduce)]);
 }
+
 /*
 *  async
 *

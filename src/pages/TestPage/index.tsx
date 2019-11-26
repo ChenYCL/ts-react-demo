@@ -2,6 +2,7 @@ import React from 'react';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { addHandler, reduceHandler } from '../TestPage/actions';
+import { R } from './requests';
 
 interface IRON {
     count?: number;
@@ -21,6 +22,10 @@ const mapActionsToProps = (dispatch: Dispatch) => ({
 
 @(connect(mapStateToProps, mapActionsToProps) as any)
 class Test extends React.PureComponent<IRON> {
+    public componentDidMount(): void {
+        R.list({ id: 186016, limit: 1 }).then((res) => console.log(res));
+    }
+
     public render() {
         const { count, add, reduce } = this.props;
         return (
