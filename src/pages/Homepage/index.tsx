@@ -12,7 +12,7 @@ interface iconT {
 const emptyBlock = (key: number) => {
     return (
         <div className="block" key={key}>
-            <div className="inner  "></div>
+            <div className="inner"></div>
         </div>
     );
 };

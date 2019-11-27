@@ -5,6 +5,10 @@ import { ADD, REDUCE } from './constants';
 export type countType = number;
 export const iniValue = 1;
 
+export interface IRootState {
+    count: countType;
+}
+
 export const countReducer = (state: countType = iniValue, action: countAction): countType => {
     switch (action.type) {
         case ADD:

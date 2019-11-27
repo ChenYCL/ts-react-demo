@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './index.scss';
-
+import Block from '../../pages/Crumb';
 // import cx from 'classnames';
 
 export type navType = {
@@ -24,7 +24,9 @@ class Header extends React.Component<IRON, { initState: string }> {
         const { nav, color, padding } = this.props;
         return (
             <header className="header">
-                <div className="nav-menu-bread "></div>
+                <div className="nav-menu-bread ">
+                    <Block />
+                </div>
                 <div className="font-logo">MUSICBED</div>
                 {nav.map((item) => (
                     <a className="nav-link-item" key={item.key}>

@@ -6,14 +6,14 @@ import { Props } from '../../types';
 import './index.scss';
 
 class Layout extends React.Component<Props, {}> {
-    navData: navType[] = [
+    public navData: navType[] = [
         { name: 'Browse', key: 0 },
         { name: 'Playlists', key: 1 },
         { name: 'Pricing', key: 2 },
         { name: 'Our Work', key: 3 },
     ];
 
-    render() {
+    public render(): JSX.Element {
         return (
             <Fragment>
                 <Header nav={this.navData} />
