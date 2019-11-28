@@ -1,4 +1,4 @@
-.wrapper {
+.Crumb-wrapper {
   position: relative;
   z-index: 600;
   width: 80px;
@@ -41,9 +41,11 @@
       background-color: rgb(39, 40, 42);
       //transition: all 2s ease-in-out 0s;
     }
-    .line1::before{
+
+    .line1::before {
       transition: all 0.2s ease-in-out 0s;
     }
+
     .line2::before {
       transition: all 0.4s ease-in-out 0s;
     }
@@ -62,12 +64,12 @@
       border-radius: 2px;
       transition: background-color 0s ease-in-out 0s, width 0.1s ease-in-out, right 0.1s ease-in-out;
     }
-
-
   }
+
+
 }
 
-.wrapper:hover {
+.Crumb-wrapper:hover {
   .content {
     div::before {
       width: 18px;
@@ -75,4 +77,103 @@
   }
 }
 
+// aside 左侧划出内容
+.open-aside.show {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 600;
+  max-width: 720px;
+  height: 100vh;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.08) 0 0 21px 0;
+  opacity: 1;
+  color: rgb(145, 150, 152);
+  transform: translateX(0);
+  width: 100%;
+  transition: all 0.2s linear 0s;
+  overflow: auto;
+  padding-left: 100px;
+  padding-top: 20px;
+  .close{
+    position: relative;
+    font-size: 40px;
+    left: -50px;
+  }
+  .shop-icon{
+    font-size: 40px;
+    position: absolute;
+    right: 50px;
+    top:20px;
+    border: 1px solid greenyellow;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  .list-left {
+    .big-menu {
+      color: rgb(39, 40, 42);
+      font-size: 40px;
+      line-height: 40px;
+      font-weight: 700;
+      letter-spacing: inherit;
+      text-transform: inherit;
+      font-family: proxima-nova, "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      white-space: inherit;
+      text-overflow: inherit;
+      transition: all 0.2s linear 0s;
+      margin: 0px;
+      overflow: inherit;
+    }
+
+    .email-live{
+      cursor: pointer;
+      display: inline-block;
+      padding-top: 15px;
+      font-size: 16px;
+      color: rgb(19, 168, 158);
+      text-decoration: none;
+      transition: color 0.3s linear 0s;
+    }
+
+    .sub-menu{
+      display: flex;
+      font-size: 18px;
+      height: 28px;
+      line-height: 20px;
+      color: rgb(39, 40, 42);
+      font-weight: 600;
+      transition: all 0.1s linear 0s;
+      padding: 0px;
+    }
+  }
+}
+
+.aside-cover.show {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .2);
+  z-index: 500;
+  display: block;
+  opacity: 1;
+  transition: opacity 0.3s linear 0s;
+}
+
+.open-aside.hide{
+  opacity: 0;
+  width: 0;
+  max-width: 0px;
+  overflow: hidden;
+  transition: max-width 0.1s;
+}
+.aside-cover.hide{
+  opacity: 0;
+  width: 0;
+  max-width: 0px;
+  overflow: hidden;
+  transition: max-width 0.3s;
+}
 

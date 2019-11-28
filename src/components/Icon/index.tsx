@@ -1,6 +1,7 @@
 import React from 'react';
 import * as CSS from 'csstype';
 import './index.scss';
+
 export interface IconType {
     url: string;
     key: number;
@@ -9,7 +10,9 @@ export interface IconType {
     readonly posi?: 'block' | 'inline-block';
 }
 
-const Icon = (props: IconType) => {
+type Props = IconType;
+
+const Icon: React.FC<Props> = (props: Props) => {
     const { url, size, style, posi } = props;
     return (
         <img

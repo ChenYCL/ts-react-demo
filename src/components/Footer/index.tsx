@@ -3,7 +3,7 @@ import { Props } from '../../types';
 import './index.scss';
 import Icon, { IconType } from '../Icon';
 class Footer extends React.Component<Props, {}> {
-    public footIconList: Array<IconType> = [
+    public footIconList: IconType[] = [
         {
             url: require('../../resource/image/facebook.svg'),
             key: 0,
@@ -21,6 +21,7 @@ class Footer extends React.Component<Props, {}> {
             key: 3,
         },
     ];
+
     render() {
         return (
             <footer>

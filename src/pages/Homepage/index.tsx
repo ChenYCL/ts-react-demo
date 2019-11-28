@@ -16,11 +16,9 @@ const emptyBlock = (key: number) => {
         </div>
     );
 };
-
 /**
- * 生成固定板块
- *  如何 约束 obj 为  [{key:0,imgName:'google'},{key:1,imgName:'youtube'}]
- *
+ *  icon
+ * @param obj
  */
 const renderBlock = (obj: iconT) => {
     if (obj.imgName === '') {
