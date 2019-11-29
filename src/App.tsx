@@ -7,6 +7,8 @@ import './App.scss';
 
 // pages
 import Homepage from './pages/Homepage';
+import NotFound from './components/NotFound';
+import { Songs } from './pages/Songs';
 
 const App: React.FC = () => {
     return (
@@ -14,9 +16,11 @@ const App: React.FC = () => {
             <Layout>
                 <Switch>
                     <Route path="/" exact={true} component={Homepage}></Route>
-                    <Route path="/a" render={() => <div>22</div>}></Route>
-                    <Route path="/b" render={() => <div>33</div>}></Route>
-                    <Route render={() => <div>未找到</div>}></Route>
+                    <Route path="/songs" component={Homepage}></Route>
+                    <Route path="/playlists" render={() => <div>playlists</div>} />
+                    <Route path="/pricing" render={() => <div>pricing</div>}></Route>
+                    <Route path="/work" render={() => <div>work</div>}></Route>
+                    <Route path="*" exact={true} component={NotFound} />
                 </Switch>
             </Layout>
         </Router>
