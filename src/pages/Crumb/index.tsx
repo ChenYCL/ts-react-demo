@@ -34,7 +34,7 @@ const Block: React.FC<Props> = (props: Props): JSX.Element => {
                 <div className="close" onClick={() => useModalShow(!modalShow)}>
                     X
                 </div>
-                <div className="shop-icon">shop</div>
+                <i className="ri-store-line shop-icon"></i>
                 <div className="list-left">
                     {menu.map((item, key) => (
                         <div className="big-menu" key={key}>
@@ -42,19 +42,18 @@ const Block: React.FC<Props> = (props: Props): JSX.Element => {
                         </div>
                     ))}
                     <div className="email-live">Live Chat | (800)380-8154 | Email Us</div>
-                    <div>---------------------------</div>
+                    <div className="divider"></div>
                     {helpMenu.map((item, key) => (
                         <div className="sub-menu" key={key}>
                             {item.name}
                         </div>
                     ))}
-                    <div>---------------------------</div>
+                    <div className="divider"></div>
                     <div className="sub-menu">Log In</div>
                     <div className="sub-menu">Create an Account</div>
                 </div>
             </div>
             <div className={cx('aside-cover', { hide: !modalShow }, { show: modalShow })}></div>
-            {/*<div></div>*/}
         </Fragment>
     );
 };
