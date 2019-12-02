@@ -8,7 +8,7 @@ import './App.scss';
 // pages
 import Homepage from './pages/Homepage';
 import NotFound from './components/NotFound';
-import { Songs } from './pages/Songs';
+import Songs from './pages/Songs';
 
 const App: React.FC = () => {
     return (
@@ -16,7 +16,7 @@ const App: React.FC = () => {
             <Layout>
                 <Switch>
                     <Route path="/" exact={true} component={Homepage}></Route>
-                    <Route path="/songs" component={Homepage}></Route>
+                    <Route path="/songs" component={Songs}></Route>
                     <Route path="/playlists" render={() => <div>playlists</div>} />
                     <Route path="/pricing" render={() => <div>pricing</div>}></Route>
                     <Route path="/work" render={() => <div>work</div>}></Route>

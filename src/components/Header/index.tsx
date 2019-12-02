@@ -2,11 +2,13 @@ import React from 'react';
 
 import './index.scss';
 import Block from '../../pages/Crumb';
+import { NavLink } from 'react-router-dom';
 // import cx from 'classnames';
 
 export type navType = {
     name: string;
     key: number;
+    routerName: string;
 };
 
 export interface IRON {
@@ -29,9 +31,9 @@ class Header extends React.Component<IRON, { initState: string }> {
                 </div>
                 <div className="font-logo">MUSICBED</div>
                 {nav.map((item) => (
-                    <a className="nav-link-item" key={item.key}>
+                    <NavLink className="nav-link-item" key={item.key} to={`/${item.routerName}`}>
                         {item.name}
-                    </a>
+                    </NavLink>
                 ))}
                 <div className="login-sign">
                     <a className="help">Help</a>

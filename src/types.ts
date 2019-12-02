@@ -10,3 +10,7 @@ export interface Props {
 }
 
 export interface RoutedProps extends Props, RouteComponentProps {}
+
+export interface WithRouterName {
+    routerName: string;
+}

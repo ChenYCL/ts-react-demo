@@ -1,0 +1,25 @@
+.wrapper-songs {
+  flex: 1;
+  display: flex;
+  height: 100%;
+  // 侧边栏
+  .leftSlider {
+    flex-basis: 80px;
+    height: 100%;
+  }
+
+  .rightBlock {
+    flex: 1;
+    height: 100%;
+    // 播放列表
+    .playlist {
+
+    }
+
+    // 歌曲块
+    .songs {
+
+    }
+  }
+
+}

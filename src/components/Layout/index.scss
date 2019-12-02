@@ -8,3 +8,31 @@
     min-height: 600px;
   }
 }
+
+
+// 歌曲类layout 布局  左侧固定
+
+.layout-songs{
+  position: relative;
+  top: 66px;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  .L{
+    flex: 1;
+    max-width: 100px;
+    position: fixed;
+  }
+  .R{
+    flex: 1;
+    margin-left: 80px;
+    .layout-content {
+      background: rgb(255, 255, 255);
+      min-height: 600px;
+    }
+
+  }
+
+}
+
+

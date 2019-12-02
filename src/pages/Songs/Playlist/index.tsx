@@ -1,7 +1,9 @@
 import React from 'react';
 
-const Playlist = () => {
-    return <div>Playlist</div>;
-};
+class Playlist extends React.Component<any> {
+    render() {
+        return <div>Playlist</div>;
+    }
+}
 
 export default Playlist;

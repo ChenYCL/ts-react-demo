@@ -1,18 +1,38 @@
-import axios from 'axios';
-import { demoInterface } from './types';
+// requests demo this module not include
+
+import axios, { AxiosResponse } from 'axios';
 import { apiHost } from '../config/proxy';
 
-export async function getAll(): Promise<any> {
-    return axios({
-        url: `${apiHost}/agents`,
-        method: 'get',
-    });
-}
+// import { xx } from './constants';R
+// http://localhost:9000/comment/music?id=186016&limit=1
 
-export async function modify(data: demoInterface): Promise<any> {
-    return axios({
-        url: `${apiHost}/agent/${data.id}`,
-        method: `PUT`,
-        data,
-    });
-}
+// eg.
+
+// list: async (req: musicType): Promise<AxiosResponse<any>> => {
+//     return axios({
+//         url: `${apiHost}/comment/music`,
+//         method: 'post',
+//         data: {
+//             ...req,
+//         },
+//     });
+// },
+// edit: (id: string, name: xx) => {
+//     return axios.put(`${apiHost}/list/edit/${id}`, name).then((res) => {
+//         return res.data;
+//     });
+// }
+
+// export interface musicType {
+//     id: number;
+//     limit: number;
+// }
+
+export const R = {
+    getMusicCat: async (): Promise<AxiosResponse<void>> => {
+        return axios({
+            url: `${apiHost}/playlist/catlist`,
+            method: 'post',
+        });
+    },
+};

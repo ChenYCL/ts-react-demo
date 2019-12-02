@@ -1,17 +1,14 @@
 import React from 'react';
-
+import './index.scss';
 interface AllProps {
-    leftSlider: JSX.Element;
-    playlist: JSX.Element;
-    songs: JSX.Element;
+    playlist: React.ReactNode;
+    songs: React.ReactNode;
 }
-
 const Songs: React.FC<AllProps> = (props: AllProps) => {
-    const { leftSlider, playlist, songs } = props;
+    const { playlist, songs } = props;
     return (
-        <div>
-            <div className="leftSlider">{leftSlider}</div>
-            <div>
+        <div className="wrapper-songs">
+            <div className="rightBlock">
                 <div className="playlist">{playlist}</div>
                 <div className="songs">{songs}</div>
             </div>
@@ -19,4 +16,4 @@ const Songs: React.FC<AllProps> = (props: AllProps) => {
     );
 };
 
-export { Songs };
+export default Songs;

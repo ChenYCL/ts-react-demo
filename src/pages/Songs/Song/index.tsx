@@ -1,7 +1,9 @@
 import React from 'react';
 
-const Song = () => {
-    return <div>song</div>;
-};
+class Song extends React.Component<{}> {
+    render() {
+        return <div>Song</div>;
+    }
+}
 
 export default Song;

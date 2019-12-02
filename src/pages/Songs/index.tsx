@@ -1,10 +1,12 @@
-import { Songs } from './Songs';
-import Slide from './LeftSlide';
+import React from 'react';
+import Songs from './Songs';
 import Song from './Song';
 import Play from './Playlist';
 
-// const R: JSX.Element = (props: any) => {
-//     return <Songs songs={} />;
-// };
-//
-// export default R;
+class SongCombine extends React.Component {
+    render() {
+        return <Songs songs={<Song />} playlist={<Play />} />;
+    }
+}
+
+export default SongCombine;
