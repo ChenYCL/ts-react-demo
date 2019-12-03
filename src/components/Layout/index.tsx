@@ -67,10 +67,10 @@ interface P extends Props {
 }
 
 // eslint-disable-next-line react/prop-types
-const Layout: React.FC<P> = ({ children, Songs, dispath }) => {
+const Layout: React.FC<P> = ({ children, Songs, dispatch }) => {
     const history = useHistory();
     const { location } = history;
-    console.log(Songs, dispath);
+    console.log(Songs, dispatch);
     return (
         <Fragment>
             <Header nav={navData} />
