@@ -14,10 +14,12 @@ export interface SubType {
     hot: boolean;
     activity: boolean;
 }
+
 export interface CatList {
     all: any;
     sub: SubType[];
 }
+
 export type initialType = CatList | {};
 
 export interface IRootState {
@@ -29,7 +31,7 @@ export const songsCat = {}; // 歌曲分类 初始值
 export const Songs = (state: initialType = songsCat, action: songAction): initialType => {
     switch (action.type) {
         case GET_MUSIC_CAT:
-            return merge(songsCat, state);
+            return merge(songsCat, { category: action.data });
         default:
             return state;
     }

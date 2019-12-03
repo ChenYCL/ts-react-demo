@@ -6,6 +6,7 @@ import Footer from '../Footer';
 import Slide, { list } from '../LeftSlide';
 import { Props } from '../../types';
 import './index.scss';
+import { connect } from 'react-redux';
 
 const navData: navType[] = [
     { name: 'Browse', key: 0, routerName: 'songs' },
@@ -57,10 +58,19 @@ const typeList: list[] = [
     },
 ];
 
+const mapStateToProps = (state: any) => ({
+    Songs: state.Songs,
+});
+
+interface P extends Props {
+    [key: string]: any;
+}
+
 // eslint-disable-next-line react/prop-types
-const Layout: React.FC<Props> = ({ children }) => {
+const Layout: React.FC<P> = ({ children, Songs, dispath }) => {
     const history = useHistory();
     const { location } = history;
+    console.log(Songs, dispath);
     return (
         <Fragment>
             <Header nav={navData} />
@@ -86,4 +96,4 @@ const Layout: React.FC<Props> = ({ children }) => {
     );
 };
 
-export default Layout;
+export default connect(mapStateToProps)(Layout);

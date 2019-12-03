@@ -33,6 +33,8 @@ export const R = {
         return axios({
             url: `${apiHost}/playlist/catlist`,
             method: 'post',
+        }).then((res) => {
+            return res.data;
         });
     },
 };

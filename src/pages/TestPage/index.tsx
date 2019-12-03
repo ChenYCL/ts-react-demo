@@ -15,12 +15,12 @@ const mapStateToProps = (state: any) => {
     };
 };
 
-const mapActionsToProps = (dispatch: Dispatch) => ({
+const mapDispatchToProps = (dispatch: Dispatch) => ({
     add: () => dispatch(addHandler()),
     reduce: () => dispatch(reduceHandler()),
 });
 
-@(connect(mapStateToProps, mapActionsToProps) as any)
+@(connect(mapStateToProps, mapDispatchToProps) as any)
 class Test extends React.PureComponent<IRON> {
     public componentDidMount(): void {
         R.list({ id: 186016, limit: 1 }).then((res) => console.log(res));

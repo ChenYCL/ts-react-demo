@@ -7,6 +7,7 @@ import { getMusicCatList } from './actions';
 function* GetMusicCatList(): SagaIterator {
     const { all, categories, sub } = yield call(R.getMusicCat);
     const data = { all, categories, sub };
+    console.log(data);
     yield put(getMusicCatList(data));
 }
 
