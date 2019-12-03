@@ -48,7 +48,7 @@ module.exports = {
     eqeqeq: ['warn', 'always'],
     'prefer-const': 0,
     '@typescript-eslint/indent': ['off'],
-    '@typescript-eslint/no-unused-vars': ['warn'],
+    '@typescript-eslint/no-unused-vars': ['off'],
     '@typescript-eslint/interface-name-prefix': 0,
     '@typescript-eslint/explicit-member-accessibility': 0,
     '@typescript-eslint/no-triple-slash-reference': 0,
