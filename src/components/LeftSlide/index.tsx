@@ -4,7 +4,7 @@ import { WithRouterName } from '../../types';
 
 export interface list extends WithRouterName {
     title: string;
-    key: number;
+    key: number | string;
     icon?: string;
 }
 

@@ -26,12 +26,18 @@ export interface IRootState {
     data: CatList;
 }
 
-export const songsCat = {}; // 歌曲分类 初始值
+export const songsCat = {
+    category: {
+        categories: null,
+        sub: null,
+        all: null,
+    },
+}; // 歌曲分类 初始值
 
 export const Songs = (state: initialType = songsCat, action: songAction): initialType => {
     switch (action.type) {
         case GET_MUSIC_CAT:
-            return merge(songsCat, { category: action.data });
+            return Object.assign({}, { category: { ...action.data } });
         default:
             return state;
     }
