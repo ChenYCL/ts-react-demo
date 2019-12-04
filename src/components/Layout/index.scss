@@ -20,7 +20,7 @@
   flex-direction: row;
   .L{
     flex: 1;
-    max-width: 100px;
+    min-width: 80px;
     position: fixed;
   }
   .R{

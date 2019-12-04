@@ -2,7 +2,6 @@ import React from 'react';
 import { Props } from '../../types';
 import './index.scss';
 import Button from '../../components/Button';
-// import TestPage from '../TestPage';
 
 interface iconT {
     key: number;
@@ -38,7 +37,7 @@ const renderBlock = (obj: iconT) => {
     );
 };
 
-const Homepage = (props: Props) => {
+const Browser = (props: Props) => {
     return (
         <section className="content-box">
             <div className="module-page-1">
@@ -270,4 +269,4 @@ const Homepage = (props: Props) => {
     );
 };
 
-export default Homepage;
+export default Browser;

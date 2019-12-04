@@ -1,29 +1,33 @@
-import * as React from 'react';
-import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+import React, { Suspense, lazy } from 'react';
+import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import BASE_NAME from './config/history';
 
-import Layout from './components/Layout';
 import './App.scss';
+import { Provider } from 'react-redux';
+import prodStore from './store/configureStore.prod'; // 生成环境
+import devStore from './store/configureStore.dev'; // 开发环境
+import Loading from './components/Loading';
+import Login from './pages/Login';
 
-// pages
-import Homepage from './pages/Homepage';
-import NotFound from './components/NotFound';
-import Songs from './pages/Songs';
+// 主路由 home , login
+const Home = lazy(() => import(/* webpackChunkName:"Home" */ './pages/Home'));
+
+const store = process.env.NODE_ENV === 'production' ? prodStore() : devStore();
 
 const App: React.FC = () => {
     return (
-        <Router basename={BASE_NAME}>
-            <Layout>
-                <Switch>
-                    <Route path="/" exact={true} component={Homepage}></Route>
-                    <Route path="/songs" component={Songs}></Route>
-                    <Route path="/playlists" render={() => <div>playlists</div>} />
-                    <Route path="/pricing" render={() => <div>pricing</div>}></Route>
-                    <Route path="/work" render={() => <div>work</div>}></Route>
-                    <Route path="*" exact={true} component={NotFound} />
-                </Switch>
-            </Layout>
-        </Router>
+        <Provider store={store}>
+            <Router basename={BASE_NAME}>
+                <Suspense fallback={<Loading />}>
+                    <Switch>
+                        <Route path="/home" component={(props: any) => <Home {...props} />} />
+                        <Route path="/login" exact component={(props: any) => <Login {...props} />} />
+                        {/*  有权限跳转,不满足则/login */}
+                        <Redirect to="/home" />
+                    </Switch>
+                </Suspense>
+            </Router>
+        </Provider>
     );
 };
 

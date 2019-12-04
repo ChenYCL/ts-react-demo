@@ -8,10 +8,10 @@ import './index.scss';
 import { connect } from 'react-redux';
 
 const navData: navType[] = [
-    { name: 'Browse', key: 0, routerName: 'songs' },
-    { name: 'Playlists', key: 1, routerName: 'playlists' },
-    { name: 'Pricing', key: 2, routerName: 'pricing' },
-    { name: 'Our Work', key: 3, routerName: 'work' },
+    { name: 'Browse', key: 0, routerName: '/home/songs' },
+    { name: 'Playlists', key: 1, routerName: '/home/playlists' },
+    { name: 'Pricing', key: 2, routerName: '/home/pricing' },
+    { name: 'Our Work', key: 3, routerName: '/home/work' },
 ];
 
 const mapStateToProps = (state: any) => ({
@@ -80,10 +80,10 @@ const Layout = ({ children, Songs }: LayoutType) => {
 
     return (
         <Fragment>
-            <Header nav={navData} />
+            <Header nav={navData} history={history} />
             {!location.pathname.includes('songs') && (
                 <main className="layout">
-                    X<section className="layout-content">{React.Children.only(children)}</section>
+                    <section className="layout-content">{children}</section>
                     <Footer />
                 </main>
             )}
@@ -91,7 +91,7 @@ const Layout = ({ children, Songs }: LayoutType) => {
                 <main className="layout-songs">
                     <div className="L">{!isLoading ? <Slide typeList={typeList} /> : <div>Loading...</div>}</div>
                     <div className="R">
-                        <section className="layout-content">{React.Children.only(children)}</section>
+                        <section className="layout-content">{children}</section>
                         <Footer />
                     </div>
                 </main>

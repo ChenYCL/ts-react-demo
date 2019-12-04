@@ -2,7 +2,7 @@ import React from 'react';
 
 import './index.scss';
 import Block from '../../pages/Crumb';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 // import cx from 'classnames';
 
 export type navType = {
@@ -15,6 +15,8 @@ export interface IRON {
     nav: Array<navType>;
     color?: string;
     padding?: object;
+    history?: any;
+    [key: string]: any;
 }
 
 class Header extends React.Component<IRON, { initState: string }> {
@@ -23,15 +25,18 @@ class Header extends React.Component<IRON, { initState: string }> {
     };
 
     public render() {
-        const { nav, color, padding } = this.props;
+        const { nav, history } = this.props;
+        console.log(this.props);
         return (
             <header className="header">
                 <div className="nav-menu-bread ">
                     <Block />
                 </div>
-                <div className="font-logo">MUSICBED</div>
+                <div className="font-logo" onClick={() => history.push('/home')}>
+                    MUSICBED
+                </div>
                 {nav.map((item) => (
-                    <NavLink className="nav-link-item" key={item.key} to={`/${item.routerName}`}>
+                    <NavLink className="nav-link-item" key={item.key} to={`${item.routerName}`}>
                         {item.name}
                     </NavLink>
                 ))}
