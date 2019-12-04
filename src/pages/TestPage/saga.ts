@@ -1,9 +1,8 @@
-import { put, takeEvery, call, delay, all } from 'redux-saga/effects';
+import { put, takeEvery, fork, delay } from 'redux-saga/effects';
 
 import { SagaIterator } from 'redux-saga';
-import { ADD, REDUCE } from './constants';
 
-import { addHandler, reduceHandler } from './actions';
+import { addHandler } from './actions';
 
 function* autoAdd(): SagaIterator {
     yield delay(5000);
@@ -15,7 +14,9 @@ export function* watchReduce() {
 }
 
 export function* countSaga() {
-    const [auto, watch] = yield all([call(autoAdd), call(watchReduce)]);
+    // const [auto, watch] = yield all([call(autoAdd), call(watchReduce)]);
+    yield fork(autoAdd);
+    yield fork(watchReduce);
 }
 
 /*

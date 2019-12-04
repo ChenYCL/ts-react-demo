@@ -8,7 +8,7 @@ interface AllProps {
 type Props = AllProps;
 
 const NotFound: React.FC<Props> = (props: Props) => {
-    const { text = '页面未找到', padding } = props;
+    const { text = '页面未找到' } = props;
     return (
         <div>
             <i></i>

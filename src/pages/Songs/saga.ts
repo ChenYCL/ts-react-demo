@@ -1,4 +1,4 @@
-import { put, takeEvery, call, fork } from 'redux-saga/effects';
+import { put, call, fork } from 'redux-saga/effects';
 import { R } from '../../api/index';
 import { SagaIterator } from 'redux-saga';
 

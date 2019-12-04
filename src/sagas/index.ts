@@ -1,4 +1,4 @@
-import { fork, ForkEffectDescriptor, SimpleEffect } from 'redux-saga/effects';
+import { fork } from 'redux-saga/effects';
 import { countSaga } from '../pages/TestPage/saga';
 import { songSaga } from '../pages/Songs/saga';
 
