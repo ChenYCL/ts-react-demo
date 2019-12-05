@@ -1,6 +1,6 @@
-export const R = {
+export default {
     getMusicCat: async (): Promise<AxiosResponse> => {
-        return axios({
+        return $http({
             url: `${apiHost}/playlist/catlist`,
             method: 'post',
         }).then((res: any) => {

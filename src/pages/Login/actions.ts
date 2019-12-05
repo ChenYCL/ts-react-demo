@@ -1,8 +1,7 @@
 import { LOGIN, LOGINOUT } from './constants';
-import { actionTypes } from '../../types';
 
 type LOGIN_ACTION = actionTypes;
-type LOGIN_OUT_ACTION = Omit<actionTypes, 'payload'>;
+type LOGIN_OUT_ACTION = actionTypes;
 
 export const Login = (params: object): LOGIN_ACTION => ({
     type: LOGIN,

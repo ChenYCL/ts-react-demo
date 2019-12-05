@@ -8,7 +8,7 @@ export interface stateType {
     Authorized: AuthType;
 }
 let initialState: stateType = {
-    Authorized: false,
+    Authorized: true,
 };
 
 export const LoginReducer = (state = initialState, action: LOGIN_ACTIONS): stateType => {
