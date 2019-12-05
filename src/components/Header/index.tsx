@@ -26,7 +26,6 @@ class Header extends React.Component<IRON, { initState: string }> {
 
     public render() {
         const { nav, history } = this.props;
-        console.log(this.props);
         return (
             <header className="header">
                 <div className="nav-menu-bread ">

@@ -1,5 +1,4 @@
 import React, { Fragment, useState } from 'react';
-import { Props } from '../../types';
 import './index.scss';
 import cx from 'classnames';
 

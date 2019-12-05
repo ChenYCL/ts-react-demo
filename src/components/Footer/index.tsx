@@ -1,5 +1,4 @@
 import React from 'react';
-import { Props } from '../../types';
 import './index.scss';
 import Icon, { IconType } from '../Icon';
 class Footer extends React.Component<Props, {}> {

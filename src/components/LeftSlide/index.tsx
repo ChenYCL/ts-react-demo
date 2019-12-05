@@ -1,6 +1,5 @@
-import React, { ComponentClass } from 'react';
+import React from 'react';
 import './index.scss';
-import { WithRouterName } from '../../types';
 
 export interface list extends WithRouterName {
     title: string;

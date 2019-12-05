@@ -1,16 +1,15 @@
 import React, { Suspense, lazy } from 'react';
 import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import BASE_NAME from './config/history';
-
+import { PageLoading } from './components/Loading';
 import './App.scss';
 import { Provider } from 'react-redux';
 import prodStore from './store/configureStore.prod'; // 生成环境
 import devStore from './store/configureStore.dev'; // 开发环境
-import Loading from './components/Loading';
-import Login from './pages/Login';
 
 // 主路由 home , login
 const Home = lazy(() => import(/* webpackChunkName:"Home" */ './pages/Home'));
+const Login = lazy(() => import(/* webpackChunkName:"Login" */ './pages/Login'));
 
 const store = process.env.NODE_ENV === 'production' ? prodStore() : devStore();
 
@@ -18,7 +17,7 @@ const App: React.FC = () => {
     return (
         <Provider store={store}>
             <Router basename={BASE_NAME}>
-                <Suspense fallback={<Loading />}>
+                <Suspense fallback={<PageLoading />}>
                     <Switch>
                         <Route path="/home" component={(props: any) => <Home {...props} />} />
                         <Route path="/login" exact component={(props: any) => <Login {...props} />} />

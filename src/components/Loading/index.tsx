@@ -1,6 +1,5 @@
-import React from 'react';
+import ContentLoading from './ContentLoading';
+import PageLoading from './PageLoading';
 
-const Loading = () => {
-    return <div>Loading</div>;
-};
-export default Loading;
+export { ContentLoading };
+export { PageLoading };
