@@ -14,3 +14,8 @@ export interface RoutedProps extends Props, RouteComponentProps {}
 export interface WithRouterName {
     routerName: string;
 }
+
+export interface actionTypes {
+    type: string;
+    payload: object;
+}

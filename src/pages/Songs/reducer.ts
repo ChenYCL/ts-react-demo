@@ -1,5 +1,5 @@
 import { songAction } from './actions';
-import { merge } from 'lodash';
+// import { merge } from 'lodash';
 
 import { GET_MUSIC_CAT } from './constants';
 
