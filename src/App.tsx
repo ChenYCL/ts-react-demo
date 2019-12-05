@@ -7,10 +7,10 @@ import { Provider } from 'react-redux';
 import prodStore from './store/configureStore.prod'; // 生成环境
 import devStore from './store/configureStore.dev'; // 开发环境
 import Loading from './components/Loading';
-import Login from './pages/Login';
 
 // 主路由 home , login
 const Home = lazy(() => import(/* webpackChunkName:"Home" */ './pages/Home'));
+const Login = lazy(() => import(/* webpackChunkName:"Login" */ './pages/Login'));
 
 const store = process.env.NODE_ENV === 'production' ? prodStore() : devStore();
 

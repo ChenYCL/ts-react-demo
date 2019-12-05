@@ -503,6 +503,7 @@ module.exports = function(webpackEnv) {
                     {
                         inject: true,
                         template: paths.appHtml,
+                        hash:true, // 静态资源生产hash
                     },
                     isEnvProduction
                         ? {
