@@ -12,20 +12,23 @@
 
 // 歌曲类layout 布局  左侧固定
 
-.layout-songs{
+.layout-songs {
   position: relative;
   top: 66px;
   bottom: 0;
   display: flex;
   flex-direction: row;
-  .L{
+
+  .L {
     flex: 1;
     min-width: 80px;
     position: fixed;
   }
-  .R{
+
+  .R {
     flex: 1;
     margin-left: 80px;
+
     .layout-content {
       background: rgb(255, 255, 255);
       min-height: 600px;

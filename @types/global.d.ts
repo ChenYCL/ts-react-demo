@@ -1,7 +1,7 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import Axios, { AxiosInstance, AxiosResponse } from 'axios';
-import { apiHost } from '../config/proxy';
+import { apiHost } from '../src/config/proxy';
 
 // 全局交互
 // import { MessageApi } from 'antd/lib/message'
@@ -13,7 +13,7 @@ import { apiHost } from '../config/proxy';
 
 declare global {
     export const apiHost: apiHost;
-    export type AxiosResponse = AxiosResponse;
+    export type $AxiosResponse = AxiosResponse;
     export const axios = Axios;
 
     export interface IProps extends RouteComponentProps {
@@ -24,15 +24,17 @@ declare global {
         children?: JSX.Element[] | JSX.Element | React.ReactNode;
         className?: string;
     }
+
     export interface WithRouterName {
         routerName: string;
     }
+
     export interface actionTypes {
         type: string;
         payload?: any;
     }
 
-    export const $http: AxiosInstance; // axios 拦截器上下文
+    export const $http: AxiosInstance;
 
     // export const $msg: MessageApi;
     // export const $notice: NotificationApi;

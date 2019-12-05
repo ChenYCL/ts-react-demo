@@ -497,13 +497,14 @@ module.exports = function(webpackEnv) {
         },
         plugins: [
             // Generates an `index.html` file with the <script> injected.
+
             new HtmlWebpackPlugin(
                 Object.assign(
                     {},
                     {
                         inject: true,
                         template: paths.appHtml,
-                        hash:true, // 静态资源生产hash
+                        hash: true, // 静态资源生产hash
                     },
                     isEnvProduction
                         ? {
@@ -526,6 +527,10 @@ module.exports = function(webpackEnv) {
             // Inlines the webpack runtime script. This script is too small to warrant
             // a network request.
             // https://github.com/facebook/create-react-app/issues/5358
+            new webpack.ProvidePlugin({
+                $http: [resolve('src/utils/http.ts'), 'default'],
+                // $msg: [resolve('node_modules/antd/es/message/index.js'), 'default'],
+            }),
             isEnvProduction &&
                 shouldInlineRuntimeChunk &&
                 new InlineChunkHtmlPlugin(HtmlWebpackPlugin, [/runtime-.+[.]js/]),
@@ -545,6 +550,10 @@ module.exports = function(webpackEnv) {
             // during a production build.
             // Otherwise React will be compiled in the very slow development mode.
             new webpack.DefinePlugin(env.stringified),
+            // new webpack.ProvidePlugin({
+            //     $http: [resolve('src/utils/http.ts'), 'default'],
+            //     // $msg: [resolve('node_modules/antd/es/message/index.js'), 'default'],
+            // }),
             // This is necessary to emit hot updates (currently CSS only):
             isEnvDevelopment && new webpack.HotModuleReplacementPlugin(),
             // Watcher doesn't work well if you mistype casing in a path so we use
