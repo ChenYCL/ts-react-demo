@@ -528,8 +528,8 @@ module.exports = function(webpackEnv) {
             // a network request.
             // https://github.com/facebook/create-react-app/issues/5358
             new webpack.ProvidePlugin({
-                $http: [resolve('src/utils/http.ts'), 'default'],
-                // $msg: [resolve('node_modules/antd/es/message/index.js'), 'default'],
+                $http: ['axios/dist/axios', 'default'],
+                apiHost: path.resolve(path.join(__dirname, '../src/config/proxy.ts')),
             }),
             isEnvProduction &&
                 shouldInlineRuntimeChunk &&
@@ -550,10 +550,6 @@ module.exports = function(webpackEnv) {
             // during a production build.
             // Otherwise React will be compiled in the very slow development mode.
             new webpack.DefinePlugin(env.stringified),
-            // new webpack.ProvidePlugin({
-            //     $http: [resolve('src/utils/http.ts'), 'default'],
-            //     // $msg: [resolve('node_modules/antd/es/message/index.js'), 'default'],
-            // }),
             // This is necessary to emit hot updates (currently CSS only):
             isEnvDevelopment && new webpack.HotModuleReplacementPlugin(),
             // Watcher doesn't work well if you mistype casing in a path so we use

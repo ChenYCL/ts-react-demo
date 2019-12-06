@@ -1,7 +1,7 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import Axios, { AxiosInstance, AxiosResponse } from 'axios';
-import { apiHost } from '../src/config/proxy';
+import apiHost from '../src/config/proxy';
 
 // 全局交互
 // import { MessageApi } from 'antd/lib/message'
