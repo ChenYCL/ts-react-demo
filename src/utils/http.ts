@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { AxiosResponse, AxiosError } from 'axios';
+// import { AxiosResponse, AxiosError } from 'axios';
 import { storage } from './tools';
 import { JWT_TOKEN } from '../config/constants';
 import helper from './httpHelper';
@@ -28,7 +28,7 @@ $http.interceptors.request.use(
 $http.interceptors.response.use(
     (response) => {
         helper.successHelper(response);
-        // console.log(response)
+        console.log(response);
         if (response.data.errors) {
             return Promise.reject(response.data.data);
         } else {
