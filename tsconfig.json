@@ -21,7 +21,7 @@
     "jsx": "react",
     "typeRoots": [
       "./node_modules/@types",
-      "./@types/"
+      "./@types"
     ]
   },
   "include": [
@@ -32,5 +32,8 @@
     "node_modules",
     "**/*.spec.ts",
     "src/serviceWorker.ts"
+  ],
+  "types": [
+    "typePatches"
   ]
 }

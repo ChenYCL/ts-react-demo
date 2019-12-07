@@ -1,7 +1,7 @@
 // requests demo this module not include
 
 import axios, { AxiosResponse } from 'axios';
-// import { apiHost } from '../../config/proxy';
+import apiHost from '../../config/proxy';
 
 // import { xx } from './constants';R
 // http://localhost:9000/comment/music?id=186016&limit=1

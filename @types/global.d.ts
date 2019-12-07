@@ -12,7 +12,8 @@ import apiHost from '../src/config/proxy';
  */
 
 declare global {
-    export const apiHost: apiHost;
+    export const host: apiHost;  // 全局读不到
+
     export type $AxiosResponse = AxiosResponse;
     export const axios = Axios;
 

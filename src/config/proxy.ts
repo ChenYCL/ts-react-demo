@@ -2,7 +2,7 @@ import { isDev } from '../utils/isDev';
 
 export const BASE_NAME = isDev ? '/' : '/';
 
-const apiHost = isDev ? 'http://yo8.fun:3000' : 'http://yo8.fun:3000';
+const apiHost = isDev ? 'https://yo8.fun' : 'https://yo8.fun';
 
 /*
  *   歌曲列表
