@@ -12,10 +12,15 @@ import apiHost from '../src/config/proxy';
  */
 
 declare global {
-    export const host: apiHost;  // 全局读不到
+    export const host: apiHost; // 全局读不到
 
     export type $AxiosResponse = AxiosResponse;
+
     export const axios = Axios;
+
+    export interface useFunc {
+        useFunc: () => void;
+    }
 
     export interface IProps extends RouteComponentProps {
         [key: string]: any;
